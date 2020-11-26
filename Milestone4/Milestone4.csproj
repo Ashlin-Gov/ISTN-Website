@@ -72,6 +72,9 @@
     <Content Include="Assets\leftsidebar.jpg" />
     <Content Include="Assets\bottombar.png" />
     <Content Include="Assets\brand sale.jpg" />
+    <Content Include="Assets\nike1.jpg" />
+    <Content Include="Assets\nike2.jpg" />
+    <Content Include="Assets\nike3.jpg" />
     <Content Include="Assets\rightside bar.jpg" />
     <Content Include="Assets\rightside2.jpg" />
     <Content Include="Assets\rightside3.jpg" />
@@ -86,13 +89,19 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Test.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
     <Content Include="Home_wf.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\npm.js" />
+    <Content Include="Login_wf.aspx" />
+    <Content Include="shoes_wf.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Home_wf.aspx.cs">
       <DependentUpon>Home_wf.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -100,7 +109,22 @@
     <Compile Include="Home_wf.aspx.designer.cs">
       <DependentUpon>Home_wf.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login_wf.aspx.cs">
+      <DependentUpon>Login_wf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login_wf.aspx.designer.cs">
+      <DependentUpon>Login_wf.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="shoes_wf.aspx.cs">
+      <DependentUpon>shoes_wf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shoes_wf.aspx.designer.cs">
+      <DependentUpon>shoes_wf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlConnectionClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap-theme.css.map" />

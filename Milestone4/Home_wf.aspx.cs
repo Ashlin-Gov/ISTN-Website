@@ -11,7 +11,14 @@ namespace Milestone4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
+            if ((int)Session["Sucess"] == 1)
+            {
+                Response.Write("<script>alert('Login Successful')</script>");
+                Session["Sucess"] = 0;
+            }
         }
+
+      
     }
 }

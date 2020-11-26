@@ -50,61 +50,38 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Sale
+        <a class="nav-link" href="#">Specials
           <span class="sr-only">(current)</span>
         </a>
       </li> <%--//--%>
      
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Women</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Caps</a> 
-          <a class="dropdown-item" href="#">Pants</a>
-          <a class="dropdown-item" href="#">Shoes</a>  
-          <a class="dropdown-item" href="#">T-Shirts</a>       
-        </div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">T-Shirt</a>   
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Men</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Caps</a> 
-          <a class="dropdown-item" href="#">Pants</a>
-          <a class="dropdown-item" href="#">Shoes</a>  
-          <a class="dropdown-item" href="#">T-Shirts</a>      
-        </div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>      
       </li>
 
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Bags</a>
-          <a class="dropdown-item" href="#">Gloves</a>
-          <a class="dropdown-item" href="#">Supplements</a>
-          <a class="dropdown-item" href="#">Waterbottles</a>
-        </div>
+     
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Equipment</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Boxing</a>
-          <a class="dropdown-item" href="#">Cricket</a>
-          <a class="dropdown-item" href="#">Gymming</a>
-          <a class="dropdown-item" href="#">Soccer</a>       
-        </div>
-      </li>
+         <a class="nav-link dropdown-toggle"  href="shoes_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Shoes</a>    
+        </li>
 
-       <i style= "padding-left: 75px;"></i>
+       <div style= "padding-left: 65px;"></div>
       <%--  Login and Cart Buttons--%>
-       <button type="button" class="btn btn-primary btn-lg" >
-         <span class="glyphicon glyphicon-user" style="color:whitesmoke"></span> Login
-       </button>
-         <i style= "padding-left: 30px;"></i>
-
-       <button type="button" class="btn btn-primary btn-lg" >
-         <span class="glyphicon glyphicon-shopping-cart" style="color:whitesmoke"></span> Cart
-       </button>
+         <asp:LinkButton ID="btn_Login" runat="server" Text="Button" class="btn btn-primary btn-lg " PostBackUrl="~/Login_wf.aspx">
+              <span class="glyphicon glyphicon-user" style="color:whitesmoke"></span> Login
+         </asp:LinkButton>
+      
+         <div style= "padding-left: 30px;"></div>
+          
+       <asp:Linkbutton ID="btn_Cart" type="button" runat="server" class="btn btn-primary btn-lg" >
+         <span class="glyphicon glyphicon-shopping-cart" style="color:whitesmoke"></span> Cart</asp:Linkbutton>
         <%--  End of Login and Cart Buttons--%>      
     </ul>
    

@@ -135,7 +135,7 @@
             
             <div  style= "padding-left: 880px"> <a class="btn btn-primary btn-lg" href="#" role="button"  >Submit</a></div>          
 <%--Company About and contact--%>
-   <hr class="my-4">
+   <hr class="my-4"/>
 </div>
 
   <asp:Image ID="Image2" runat="server" ImageUrl="~/Assets/bottombar.png" Width="100%" />

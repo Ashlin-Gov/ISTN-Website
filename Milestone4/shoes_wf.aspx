@@ -31,10 +31,43 @@
     <div class="col-lg-2">
     <%--    sidebar left--%>
        <div style="margin-bottom:100px"></div>
+ <%--       Start Of Filter Bar--%>
+    <div class="card text-black  mb-3" style="max-width: 20rem;background-color : white; height : 50rem">
+         <div class="card-header" style="font-size : 30px ; background-color : white ;color:black">Filter By </div>
+         <div class="card-body">
+         <h4 class="card-title" style="color:black">Brand</h4>
+            <asp:RadioButtonList ID="radioListBrand" runat="server">
+              <asp:ListItem> Adidas</asp:ListItem>
+              <asp:ListItem> Puma</asp:ListItem>
+              <asp:ListItem> Nike</asp:ListItem>
+            </asp:RadioButtonList>
+                      <hr class="my-4"/>
+            <h4 class="card-title" style="color:black">Gender</h4>
+            <asp:RadioButtonList ID="radioListGender" runat="server">
+              <asp:ListItem> Male</asp:ListItem>
+              <asp:ListItem> Female</asp:ListItem>       
+            </asp:RadioButtonList>
+                <hr class="my-4"/>
+            <h4 class="card-title" style="color:black">Price</h4>
+            <asp:RadioButtonList ID="radioListPrice" runat="server">
+              <asp:ListItem> Lowest First</asp:ListItem>
+              <asp:ListItem> Highest First</asp:ListItem>       
+            </asp:RadioButtonList>
 
+             <hr class="my-2"/>
+
+               <div style= "margin-top: 55px;"></div>
+              <asp:Button ID="btn_ApplyFilter" runat="server" Text="Apply Filters" class="btn btn-secondary btn-lg" Width="100%" />
+              <div style= "margin-top: 25px;"></div>
+             <asp:Button ID="btn_ClearFilter" runat="server" Text="Clear Filters" class="btn btn-secondary btn-lg" Width="100%" OnClick="btn_ClearFilter_Click" />
+             
+         </div>
+</div>
+<%--    End of Filter Bar   --%>
     </div>
+  
  <%--       end of sidebar left--%>
-
+     
     <div class="col-lg-8">
     <%--  Center Column--%>
       <%--  navbar-start--%>
@@ -108,37 +141,110 @@
   </div>
 </nav>
 <%-- nav bar end --%>   
+<%--Start of Center Shopping Collumn--%>
  <div class="container">   
   <div class="row">
     <div style="margin-bottom:30px" ></div>
         
-     <div class="col-sm-4" >
+     <div class="col-sm-4" > <%--Left Column--%>
         <div style="margin-bottom:40px"></div>
-        <div ><asp:Label ID="Header1" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div ><asp:Label ID="Header1" runat="server" Text="Nike Shoes" ></asp:Label>  </div>
         <div > <asp:ImageButton ID="Imagebutton1" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
         <div > <asp:Label ID="Footer1" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
-        <div ><asp:Label ID="Label5" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div ><asp:Label ID="Header4" runat="server" Text="Nike Shoes"></asp:Label>  </div>
         <div > <asp:ImageButton ID="Imagebutton4" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
-        <div > <asp:Label ID="Label6" runat="server" Text="Nike Shoes"></asp:Label></div>
-    </div>
-    <div class="col-sm-4"> 
+        <div > <asp:Label ID="Footer4" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
-        <div ><asp:Label ID="Label1" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div ><asp:Label ID="Header7" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton7" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer7" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header10" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton10" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer10" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header13" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton13" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer13" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header16" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton16" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer16" runat="server" Text="Nike Shoes"></asp:Label></div>
+    </div>
+    <div class="col-sm-4"><%-- Center Column--%>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header2" runat="server" Text="Nike Shoes"></asp:Label>  </div>
         <div > <asp:ImageButton ID="Imagebutton2" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
-        <div > <asp:Label ID="Label2" runat="server" Text="Nike Shoes"></asp:Label></div>
-    </div>
-    <div class="col-sm-4"> 
+        <div > <asp:Label ID="Footer2" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
-        <div ><asp:Label ID="Label3" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div ><asp:Label ID="Header5" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton5" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer5" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header8" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton8" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer8" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header11" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton11" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer11" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header14" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton14" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer14" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header17" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton17" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer17" runat="server" Text="Nike Shoes"></asp:Label></div>
+    </div>
+    <div class="col-sm-4"> <%--Right Column--%>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header3" runat="server" Text="Nike Shoes"></asp:Label>  </div>
         <div > <asp:ImageButton ID="Imagebutton3" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
-        <div> <asp:Label ID="Label4" runat="server" Text="Nike Shoes"></asp:Label></div>
+        <div> <asp:Label ID="Footer3" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header6" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton6" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer6" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header9" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton9" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer9" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header12" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton12" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer12" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+        <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header15" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton15" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer15" runat="server" Text="Nike Shoes"></asp:Label></div>
+
+         <div style="margin-bottom:40px"></div>
+        <div ><asp:Label ID="Header18" runat="server" Text="Nike Shoes"></asp:Label>  </div>
+        <div > <asp:ImageButton ID="Imagebutton18" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:Label ID="Footer18" runat="server" Text="Nike Shoes"></asp:Label></div>
     </div>
       </div>
 </div>   
+<%--   End of Center Column SAles--%>
+
    
 
   

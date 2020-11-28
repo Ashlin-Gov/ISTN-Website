@@ -53,6 +53,18 @@ namespace Milestone4
             connection.Close();
             return dt;
         }
+        public DataTable Load_Shoes(string cat)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("getProdName_Price_Path", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@cat", cat);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            return dt;
+        }
 
 
         //public static void BookInsert()///Via Dataset

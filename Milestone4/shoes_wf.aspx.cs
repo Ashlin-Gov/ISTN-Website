@@ -18,6 +18,7 @@ namespace Milestone4
         Label[] arrLabel = new Label[20];
         ImageButton[] arrImage = new ImageButton[20];
         Label[] arrCostLabel = new Label[20];
+        int[] arrProdID = new int[20];
         int MaxItems;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,12 +37,7 @@ namespace Milestone4
 
         }
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
-        {
-
-            // ImageButton1.
-            //Response.Write("<script>alert()</script>");
-        }
+        
 
         protected void addControlsToArray()
         {
@@ -142,6 +138,7 @@ namespace Milestone4
 
             foreach (DataRow dr in table1.Rows)
             {
+            //    arrProdID[i]= (int)dr["ProdID"];
                 arrLabel[i].Text = (string)dr["ProductName"];
                 arrImage[i].ImageUrl = (string)dr["imgPath"];
                 arrCostLabel[i].Text = "R" + ((decimal)dr["SellingPrice"]).ToString();
@@ -156,6 +153,14 @@ namespace Milestone4
             radioListBrand.ClearSelection();
             radioListGender.ClearSelection();
             radioListPrice.ClearSelection();
+        }
+
+        protected void Imagebutton1_Click1(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[0].Text;
+            Session["ImgUrlDisplay"] = arrImage[0].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
         }
     }
 }

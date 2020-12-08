@@ -22,9 +22,16 @@ namespace Milestone4
 
         protected void Session_Start(object sender, EventArgs e)
         {
+            List<string> cart = new List<string>();
+            List<string> cartQTY = new List<string>();
             Session.Add("emailID", 0);
             Session.Add("passwordID", 0);
             Session.Add("Sucess", 0);
+            Session.Add("Cart", cart);
+            Session.Add("CartQTY", cartQTY);
+            Session.Add("prodIdDisplay", 0);
+            Session.Add("NameDisplay", 0);
+            Session.Add("ImgUrlDisplay", 0);
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

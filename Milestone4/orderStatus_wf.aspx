@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="prepurchase_wf.aspx.cs" Inherits="Milestone4.prepurchase_wf" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="orderStatus_wf.aspx.cs" Inherits="Milestone4.orderStatus_wf" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -113,78 +113,112 @@
  <%--Preview Screen Start--%>
   
   <%--End OF Preview Screen--%>          
-       
-    <div class="row">
-    <div class="col-sm-6">
-        <div class="card border-secondary mb-3" style="width: 100%;height:30rem">
-       
-           <div class="card-body">             
-             <asp:Image ID="itemImage" runat="server" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg"  Width="80%" style="padding-left:20%"/>
-           </div>
-        </div>
-     
-    </div>
-    <div class="col-sm-6"> 
-        <div class="card border-secondary mb-3" style="width:100%;height:37rem" >
-              <div class="card-header"><asp:Label ID="Header" runat="server" Text="Women's Renew Run Nike Shoes - R1200"></asp:Label></div>
-                <div class="card-body">
-                 <h4 class="card-title" style="color:black">Product Description</h4>
+   
+   
+     <div class="card border-secondary mb-3" style="width: 100%;height:60rem">
+         <div class="card-header">Orders</div>
+         <div class="card-body">             
                    
-                 <p class="card-text"> <asp:Label ID="lblDesc" runat="server" Text="This is to test exactly how much of text for a product description we are going to have."></asp:Label> </p>
-                             <hr class="my-4"/>
+               <label >Order No</label>
+               <label style="padding-left:26.5%" >Order Date</label>
+               <label style="padding-left:25%" >Status</label>
+               <hr class="my-4"/>
 
-                 <h4 class="card-title" style="color:black">Colour</h4>
+            <div class="row">
+            <div class="col-sm-4">
+                <asp:Label ID="ordId1" runat="server" Text="#567"></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="ordId2" runat="server" Text="#789"></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="ordId3" runat="server" Text="#89"></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="ordId4" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="ordId5" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="ordId6" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="ordId7" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="ordId8" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="ordId9" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="ordId10" runat="server" Text=""></asp:Label>
 
-                  <div>
-                    <asp:DropDownList ID="colourList" runat="server" class="custom-select">                     
-                        
-                    </asp:DropDownList>
-                  </div>
-                    <hr class="my-4"/>
-                    <h4 class="card-title " style="color:black" >Size</h4>
-                    <asp:DropDownList ID="sizeList" runat="server" class="custom-select">                     
-                      
-                    </asp:DropDownList>
+            </div>
 
+            <div class="col-sm-4">
+                 <asp:Label ID="dt1" runat="server" Text="01-12-2020"></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="dt2" runat="server" Text="01-10-2020"></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="dt3" runat="server" Text="17-08-2020"></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="dt4" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="dt5" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="dt6" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="dt7" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="dt8" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="dt9" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="dt10" runat="server" Text=""></asp:Label>
+            </div>
 
-                    <hr class="my-4" style="margin-top:40px"/>
-                       <div style="margin-top:40px"></div>
-                   <div>
-                    <asp:DropDownList ID="quantityList" runat="server" class="custom-select" style="Width:120px">
-                        <asp:ListItem Value="1">1</asp:ListItem>
-                      
-                        <asp:ListItem>2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                      
-                    </asp:DropDownList>  
-                    <a style="padding-left:10px"></a>
+            <div class="col-sm-4">
+                <asp:Label ID="status1" runat="server" Text="Active"></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="status2" runat="server" Text="Ready For Collection"></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="status3" runat="server" Text="Collected"></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="status4" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="status5" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="status6" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="status7" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="status8" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="status9" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:40px"></div>
+                <asp:Label ID="status10" runat="server" Text=""></asp:Label>
+            </div>
 
+           
+            </div>
+          </div>
 
-                         <asp:Button ID="btn_AddToCart" runat="server" Text="Add To Cart" class="btn btn-secondary" style="width:120px" OnClick="btn_AddToCart_Click" />
-                    </div>
-
-                </div>
-                             
-
+   
         </div>
    
-  </div>
+          <%-- start of payment column--%>
+    
 
        <div style="margin-bottom:10px"></div>
     
-<%--End Of center column--%>
+
 
    
-  </div>
+        <%--  End of payment column--%>
+  
+        <%--End Of center column--%>
       <div class="col-lg-2">
-            
+      
+      
+</div>
+
       </div> 
 </div>
        
-</div>
-</div>
+
    
 <%--<%--Footer Of the Page   --%>    
 
@@ -205,7 +239,7 @@
             
             <div  style= "padding-left: 880px"> <a class="btn btn-primary btn-lg" href="#" role="button"  >Submit</a></div>          
 <%--Company About and contact--%>
-   <hr class="my-4">
+   <hr class="my-4"/>
 </div>
 
   <asp:Image ID="Image2" runat="server" ImageUrl="~/Assets/bottombar.png" Width="100%" />
@@ -221,4 +255,3 @@
 </body>
 
 </html>
-

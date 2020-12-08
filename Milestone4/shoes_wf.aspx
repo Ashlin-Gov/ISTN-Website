@@ -149,7 +149,7 @@
      <div class="col-sm-4" > <%--Left Column--%>
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header1" runat="server" Text="Nike Shoes" ></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton1" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton1" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" OnClick="Imagebutton1_Click1" /></div>
         <div > <asp:Label ID="Footer1" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>

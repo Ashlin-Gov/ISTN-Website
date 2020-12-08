@@ -66,6 +66,48 @@ namespace Milestone4
             return dt;
         }
 
+        public DataTable Load_PrePurchase(string prodName)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("getPrePurchase", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@prodName", prodName);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            return dt;
+        }
+
+        public string returnID(string prodName,string colour,string size)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("getProdIdDisplay", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@prodName", prodName);
+            sqlCommand.Parameters.AddWithValue("@Colour", colour);
+            sqlCommand.Parameters.AddWithValue("@Size", size);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            string id = dt.Rows[0]["ProdID"].ToString();
+            return id;
+        }
+
+        public DataTable Load_CartDetails(string id)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("getCartIdentity", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@id", id);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            return dt;
+        }
+
 
         //public static void BookInsert()///Via Dataset
         //{

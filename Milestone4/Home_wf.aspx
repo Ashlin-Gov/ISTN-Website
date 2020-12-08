@@ -80,7 +80,7 @@
       
          <div style= "padding-left: 30px;"></div>
           
-       <asp:Linkbutton ID="btn_Cart" type="button" runat="server" class="btn btn-primary btn-lg" >
+       <asp:Linkbutton ID="btn_Cart" type="button" runat="server" class="btn btn-primary btn-lg" OnClick="btn_Cart_Click" >
          <span class="glyphicon glyphicon-shopping-cart" style="color:whitesmoke"></span> Cart</asp:Linkbutton>
         <%--  End of Login and Cart Buttons--%>      
     </ul>
@@ -92,7 +92,7 @@
     
         <div class="container">
             <asp:Image ID="Image3" runat="server" ImageUrl="~/Assets/mainadv.jpg" Width="100%" />
-            <asp:Button ID="Button1" runat="server" Text="Button" style="margin-left:485px;padding-left:68px;opacity:0; transform:translateY(-180%)" />
+            <asp:Button ID="btnCheck" runat="server" Text="Button" style="margin-left:485px;padding-left:68px;opacity:0; transform:translateY(-180%)" OnClick="btnCheck_Click" />
         </div>
        
         <div class="container">

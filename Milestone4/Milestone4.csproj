@@ -83,6 +83,7 @@
     <Content Include="Assets\topBar.png" />
     <Content Include="Assets\totalsports.jpg" />
     <Content Include="Assets\TsBar.png" />
+    <Content Include="cart_wf.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -95,11 +96,19 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\npm.js" />
     <Content Include="Login_wf.aspx" />
+    <Content Include="orderStatus_wf.aspx" />
     <Content Include="prepurchase_wf.aspx" />
     <Content Include="shoes_wf.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cart_wf.aspx.cs">
+      <DependentUpon>cart_wf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart_wf.aspx.designer.cs">
+      <DependentUpon>cart_wf.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -116,6 +125,13 @@
     </Compile>
     <Compile Include="Login_wf.aspx.designer.cs">
       <DependentUpon>Login_wf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orderStatus_wf.aspx.cs">
+      <DependentUpon>orderStatus_wf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orderStatus_wf.aspx.designer.cs">
+      <DependentUpon>orderStatus_wf.aspx</DependentUpon>
     </Compile>
     <Compile Include="prepurchase_wf.aspx.cs">
       <DependentUpon>prepurchase_wf.aspx</DependentUpon>

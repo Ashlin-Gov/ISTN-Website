@@ -24,24 +24,9 @@
  
 
      <asp:Image ID="Image1" runat="server" ImageUrl="~/Assets/TsBar.png" Width="100%" />
-
 <div class ="form-control-lg">
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-2">
-    <%--    sidebar left--%>
-       <div style="margin-bottom:100px"></div>
-
-        <asp:Image ID="Image5" runat="server" ImageUrl="~/Assets/rightside2.jpg"  Width="100%" height="50%"/>
-           <div style="margin-bottom:60px"></div>
-             <asp:Image ID="Image8" runat="server" ImageUrl="~/Assets/leftsidebar.jpg"  Width="100%" height="34%"/>
-    </div>
- <%--       end of sidebar left--%>
-
-    <div class="col-lg-8">
-    <%--  Center Column--%>
-      <%--  navbar-start--%>
-       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -49,32 +34,36 @@
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Specials
-          <span class="sr-only">(current)</span>
-        </a>
-      </li> <%--//--%>
      
+      <asp:Label ID="lblName" runat="server" Text="" style="margin-top:7px" Width="250" ForeColor="White"></asp:Label>
+     
+        
+           <div style= "padding-left: 150px;"></div>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="Home_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Home</a>   
+      </li>
+       
+     <%--//--%>
+      <div style= "padding-left: 50px;"></div>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">T-Shirt</a>   
       </li>
-
-        <li class="nav-item dropdown">
+       <div style= "padding-left: 50px;"></div>
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>      
       </li>
-
+         <div style= "padding-left: 50px;"></div>
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>
-     
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>    
       </li>
-
+        <div style= "padding-left: 50px;"></div>
         <li class="nav-item dropdown">
          <a class="nav-link dropdown-toggle"  href="shoes_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Shoes</a>    
         </li>
 
-       <div style= "padding-left: 65px;"></div>
+       <div style= "padding-left: 100px;"></div>
       <%--  Login and Cart Buttons--%>
-         <asp:LinkButton ID="btn_Login" runat="server" Text="Button" class="btn btn-primary btn-lg " PostBackUrl="~/Login_wf.aspx">
+         <asp:LinkButton ID="btn_Login" runat="server" Text="Button" class="btn btn-primary btn-lg " OnClick="btn_Login_Click">
               <span class="glyphicon glyphicon-user" style="color:whitesmoke"></span> Login
          </asp:LinkButton>
       
@@ -87,8 +76,30 @@
    
   </div>
 </nav>
+
+
+         </div>
+         </div>
+            <div style="margin-bottom:20px"></div>
+<div class ="form-control-lg">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2">
+    <%--    sidebar left--%>
+       <div style="margin-bottom:15px"></div>
+
+        <asp:Image ID="Image5" runat="server" ImageUrl="~/Assets/rightside2.jpg"  Width="100%" height="50%"/>
+           <div style="margin-bottom:60px"></div>
+             <asp:Image ID="Image8" runat="server" ImageUrl="~/Assets/leftsidebar.jpg"  Width="100%" height="34%"/>
+    </div>
+ <%--       end of sidebar left--%>
+
+    <div class="col-lg-8">
+    <%--  Center Column--%>
+      <%--  navbar-start--%>
+    
 <%-- nav bar end --%>   
-    <div style="margin-bottom:5px"></div>
+    <div style="margin-bottom:15px"></div>
     
         <div class="container">
             <asp:Image ID="Image3" runat="server" ImageUrl="~/Assets/mainadv.jpg" Width="100%" />
@@ -106,7 +117,10 @@
    
   </div>
       <div class="col-lg-2">
-             <div style="margin-bottom:100px"></div>
+          
+ 
+
+             <div style="margin-bottom:15px"></div>
              <asp:Image ID="Image6" runat="server" ImageUrl="~/Assets/rightside3.jpg"  Width="100%" height="50%"/>
            <div style="margin-bottom:60px"></div>
              <asp:Image ID="Image7" runat="server" ImageUrl="~/Assets/sidebar2.jpg"  Width="100%" height="34%"/>

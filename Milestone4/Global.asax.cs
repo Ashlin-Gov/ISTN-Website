@@ -32,6 +32,11 @@ namespace Milestone4
             Session.Add("prodIdDisplay", 0);
             Session.Add("NameDisplay", 0);
             Session.Add("ImgUrlDisplay", 0);
+            Session.Add("FilterBy", 0);
+            //
+            Session.Add("MemberID", 0);
+            Session.Add("OrdID", 0);
+            Session.Add("Name", "");
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

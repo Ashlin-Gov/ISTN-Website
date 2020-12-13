@@ -97,6 +97,7 @@
     <Content Include="js\npm.js" />
     <Content Include="Login_wf.aspx" />
     <Content Include="orderStatus_wf.aspx" />
+    <Content Include="orderView_wf.aspx" />
     <Content Include="prepurchase_wf.aspx" />
     <Content Include="shoes_wf.aspx" />
     <Content Include="Web.config" />
@@ -132,6 +133,13 @@
     </Compile>
     <Compile Include="orderStatus_wf.aspx.designer.cs">
       <DependentUpon>orderStatus_wf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orderView_wf.aspx.cs">
+      <DependentUpon>orderView_wf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orderView_wf.aspx.designer.cs">
+      <DependentUpon>orderView_wf.aspx</DependentUpon>
     </Compile>
     <Compile Include="prepurchase_wf.aspx.cs">
       <DependentUpon>prepurchase_wf.aspx</DependentUpon>

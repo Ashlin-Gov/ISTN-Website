@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="orderStatus_wf.aspx.cs" Inherits="Milestone4.orderStatus_wf" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="orderView_wf.aspx.cs" Inherits="Milestone4.orderView_wf" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -92,96 +92,99 @@
   <%--End OF Preview Screen--%>          
    
    
-     <div class="card border-secondary mb-3" style="width: 100%;height:60rem">
-         <div class="card-header">Orders</div>
-         <div class="card-body">             
-                   
-               <label >Order No</label>
-               <label style="padding-left:26.5%" >Order Date</label>
-               <label style="padding-left:25%" >Status</label>
-               <hr class="my-4"/>
-
-            <div class="row">
-            <div class="col-sm-4">
-                <asp:LinkButton ID="ord1" runat="server" OnClick="ord1_Click">LinkButton</asp:LinkButton>      
-                  <div style="margin-bottom:40px"></div>
-                <asp:LinkButton ID="ord2" runat="server" OnClick="ord2_Click">LinkButton</asp:LinkButton>      
-                  <div style="margin-bottom:40px"></div>
-                <asp:LinkButton ID="ord3" runat="server">LinkButton</asp:LinkButton>      
-                  <div style="margin-bottom:40px"></div>
-                <asp:LinkButton ID="ord4" runat="server">LinkButton</asp:LinkButton>      
-                  <div style="margin-bottom:40px"></div>
-                <asp:LinkButton ID="ord5" runat="server">LinkButton</asp:LinkButton>      
-                  <div style="margin-bottom:40px"></div>
-                <asp:LinkButton ID="ord6" runat="server">LinkButton</asp:LinkButton>      
-                  <div style="margin-bottom:40px"></div>
-                <asp:LinkButton ID="ord7" runat="server">LinkButton</asp:LinkButton>      
-                  <div style="margin-bottom:40px"></div>
-                <asp:LinkButton ID="ord8" runat="server">LinkButton</asp:LinkButton>      
-                  <div style="margin-bottom:40px"></div>
-                <asp:LinkButton ID="ord9" runat="server">LinkButton</asp:LinkButton>      
-                  <div style="margin-bottom:40px"></div>
-                <asp:LinkButton ID="ord10" runat="server">LinkButton</asp:LinkButton>      
-
-            </div>
-
-            <div class="col-sm-4">
-                 <asp:Label ID="dt1" runat="server" Text="01-12-2020"></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="dt2" runat="server" Text="01-10-2020"></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="dt3" runat="server" Text="17-08-2020"></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="dt4" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="dt5" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="dt6" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="dt7" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="dt8" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="dt9" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="dt10" runat="server" Text=""></asp:Label>
-            </div>
-
-            <div class="col-sm-4">
-                <asp:Label ID="status1" runat="server" Text="Active"></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="status2" runat="server" Text="Ready For Collection"></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="status3" runat="server" Text="Collected"></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="status4" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="status5" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="status6" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="status7" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="status8" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="status9" runat="server" Text=""></asp:Label>
-                  <div style="margin-bottom:40px"></div>
-                <asp:Label ID="status10" runat="server" Text=""></asp:Label>
-            </div>
-
-           
-            </div>
-          </div>
-
-   
-        </div>
    
           <%-- start of payment column--%>
     
 
        <div style="margin-bottom:10px"></div>
     
+        <div class="card border-secondary mb-3" style="width: 100%;height:60rem">
+         <div class="card-header">View Order</div>
+         <div class="card-body">             
+            <asp:Label ID="ordNo" runat="server" Text="Label"></asp:Label>
+             <hr class="my-4"/>
+             <div style="margin-bottom:40px"></div>
+              <label >Product</label>
+               <label style="padding-left:44%" >Quantity</label>
+               <label style="padding-left:131px" >Price</label>
+               <hr class="my-4"/>
 
+            <div class="row">
+            <div class="col-sm-6">
+                <asp:Label ID="prod1" runat="server" Text="Nike Shoes"></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="prod2" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="prod3" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="prod4" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="prod5" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="prod6" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="prod7" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="prod8" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="prod9" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="prod10" runat="server" Text=""></asp:Label>
+                
+            </div>
+
+            <div class="col-sm-2">
+                 <asp:Label ID="qty1" runat="server" Text="1"></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="qty2" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="qty3" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="qty4" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="qty5" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="qty6" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="qty7" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="qty8" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="qty9" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="qty10" runat="server" Text=""></asp:Label>
+            </div>
+
+            <div class="col-sm-4">
+                <asp:Label ID="price1" runat="server" Text="R1200"></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="price2" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="price3" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="price4" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="price5" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="price6" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="price7" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="price8" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="price9" runat="server" Text=""></asp:Label>
+                  <div style="margin-bottom:45px"></div>
+                <asp:Label ID="price10" runat="server" Text=""></asp:Label>
+            </div>
+               
+
+             <div style="margin-bottom:40px"></div>
+          
+          </div> 
+                      <hr class="my-4"/>
+                <asp:Label ID="ordTotal" runat="server" Text="Label"></asp:Label>
+          <%--</div>--%>
+            </div>
 
    
         <%--  End of payment column--%>

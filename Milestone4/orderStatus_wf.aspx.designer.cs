@@ -33,94 +33,112 @@ namespace Milestone4
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// ordId1 control.
+        /// btn_Login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ordId1;
+        protected global::System.Web.UI.WebControls.LinkButton btn_Login;
 
         /// <summary>
-        /// ordId2 control.
+        /// btn_Cart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ordId2;
+        protected global::System.Web.UI.WebControls.LinkButton btn_Cart;
 
         /// <summary>
-        /// ordId3 control.
+        /// ord1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ordId3;
+        protected global::System.Web.UI.WebControls.LinkButton ord1;
 
         /// <summary>
-        /// ordId4 control.
+        /// ord2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ordId4;
+        protected global::System.Web.UI.WebControls.LinkButton ord2;
 
         /// <summary>
-        /// ordId5 control.
+        /// ord3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ordId5;
+        protected global::System.Web.UI.WebControls.LinkButton ord3;
 
         /// <summary>
-        /// ordId6 control.
+        /// ord4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ordId6;
+        protected global::System.Web.UI.WebControls.LinkButton ord4;
 
         /// <summary>
-        /// ordId7 control.
+        /// ord5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ordId7;
+        protected global::System.Web.UI.WebControls.LinkButton ord5;
 
         /// <summary>
-        /// ordId8 control.
+        /// ord6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ordId8;
+        protected global::System.Web.UI.WebControls.LinkButton ord6;
 
         /// <summary>
-        /// ordId9 control.
+        /// ord7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ordId9;
+        protected global::System.Web.UI.WebControls.LinkButton ord7;
 
         /// <summary>
-        /// ordId10 control.
+        /// ord8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ordId10;
+        protected global::System.Web.UI.WebControls.LinkButton ord8;
+
+        /// <summary>
+        /// ord9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton ord9;
+
+        /// <summary>
+        /// ord10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton ord10;
 
         /// <summary>
         /// dt1 control.

@@ -42,71 +42,47 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
+<div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#"><b>Sale</b>
+        <a class="nav-link" href="Home_wf.aspx">Home
           <span class="sr-only">(current)</span>
         </a>
       </li> <%--//--%>
      
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><b>Women</b></a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Caps</a> 
-          <a class="dropdown-item" href="#">Pants</a>
-          <a class="dropdown-item" href="#">Shoes</a>  
-          <a class="dropdown-item" href="#">T-Shirts</a>       
-        </div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">T-Shirt</a>   
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><b>Men</b></a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Caps</a> 
-          <a class="dropdown-item" href="#">Pants</a>
-          <a class="dropdown-item" href="#">Shoes</a>  
-          <a class="dropdown-item" href="#">T-Shirts</a>      
-        </div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>      
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><b>Accessories</b></a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Bags</a>
-          <a class="dropdown-item" href="#">Gloves</a>
-          <a class="dropdown-item" href="#">Supplements</a>
-          <a class="dropdown-item" href="#">Waterbottles</a>
-        </div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>
+     
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><b>Equipment</b></a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Boxing</a>
-          <a class="dropdown-item" href="#">Cricket</a>
-          <a class="dropdown-item" href="#">Gymming</a>
-          <a class="dropdown-item" href="#">Soccer</a>       
-        </div>
-      </li>
+         <a class="nav-link dropdown-toggle"  href="shoes_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Shoes</a>    
+        </li>
 
-       <i style= "padding-left: 75px;"></i>
+
+       <i style= "padding-left: 65px;"></i>
       <%--  Login and Cart Buttons--%>
-       <button type="button" class="btn btn-primary btn-lg" >
-         <span class="glyphicon glyphicon-user" style="color:whitesmoke"></span> <b>Login</b>
-       </button>
-         <i style= "padding-left: 25px;"></i>
-
-       <button type="button" class="btn btn-primary btn-lg" >
-         <span class="glyphicon glyphicon-shopping-cart" style="color:whitesmoke"></span><b>Cart</b> 
-       </button>
+         <asp:LinkButton ID="btn_Login" runat="server" Text="Button" class="btn btn-primary btn-lg " PostBackUrl="~/Login_wf.aspx">
+              <span class="glyphicon glyphicon-user" style="color:whitesmoke"></span> Login
+         </asp:LinkButton>
+      
+         <div style= "padding-left: 30px;"></div>
+          
+      <asp:Linkbutton ID="btn_Cart" type="button" runat="server" class="btn btn-primary btn-lg" PostBackUrl="~/cart_wf.aspx">
+         <span class="glyphicon glyphicon-shopping-cart" style="color:whitesmoke"></span> Cart</asp:Linkbutton>
         <%--  End of Login and Cart Buttons--%>      
     </ul>
    
   </div>
 </nav>
-
 <%-- nav bar end --%>   
     <div style="margin-bottom:30px"></div>
  <%--Preview Screen Start--%>

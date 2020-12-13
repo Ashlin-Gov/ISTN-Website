@@ -66,6 +66,118 @@ namespace Milestone4
             return dt;
         }
 
+        public DataTable GetOrdStats(string mem)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("GetOrderNo", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@memID", mem);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            return dt;
+        }
+
+        public string GetOrderTotal(string ordNo)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("GetOrderTotal", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@ordNum", int.Parse(ordNo));
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            string total = dt.Rows[0][0].ToString();
+            return total;
+        }
+
+        public string GetName(string memID)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("GetName", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@memID", memID);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            string name = dt.Rows[0][0].ToString();
+            return name;
+        }
+
+        public DataTable GetReceipt(string ord)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("GetReceipt", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@ordNum", int.Parse(ord));
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            return dt;
+        }
+
+        public string GetLoginID(string email,string pass)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("GetLoginID", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@email", email);
+            sqlCommand.Parameters.AddWithValue("@pass", pass);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            string id = dt.Rows[0][0].ToString();
+            return id;
+        }
+
+
+        public DataTable Filter_2(string cat, string brand, string gender,int pricing)
+        {
+            connection.Open();
+            if (pricing==0)
+            {
+                sqlCommand = new SqlCommand("FilterProductsPriceASC", connection);
+            }
+            else
+            {
+                sqlCommand = new SqlCommand("FilterProductsPriceDESC", connection);
+            }
+
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+
+            if (brand=="")
+            {
+                sqlCommand.Parameters.AddWithValue("@Brand", DBNull.Value);
+            }
+            else
+            {
+                sqlCommand.Parameters.AddWithValue("@Brand",int.Parse(brand));
+            }
+
+            if (gender == "")
+            {
+                sqlCommand.Parameters.AddWithValue("@Gender", DBNull.Value);
+            }
+            else
+            {
+                sqlCommand.Parameters.AddWithValue("@Gender", gender);
+            }
+            
+            sqlCommand.Parameters.AddWithValue("@Category", cat);        
+            sqlCommand.Parameters.AddWithValue("@Colour", DBNull.Value);
+            sqlCommand.Parameters.AddWithValue("@Size", DBNull.Value);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            return dt;
+        }
+
         public DataTable Load_PrePurchase(string prodName)
         {
             connection.Open();

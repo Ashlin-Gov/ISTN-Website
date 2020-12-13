@@ -32,20 +32,23 @@
     <%--    sidebar left--%>
        <div style="margin-bottom:100px"></div>
  <%--       Start Of Filter Bar--%>
-    <div class="card text-black  mb-3" style="max-width: 20rem;background-color : white; height : 50rem">
+    <div class="card text-black  mb-3" style="max-width: 20rem;background-color : white; height :65rem">
          <div class="card-header" style="font-size : 30px ; background-color : white ;color:black">Filter By </div>
          <div class="card-body">
          <h4 class="card-title" style="color:black">Brand</h4>
             <asp:RadioButtonList ID="radioListBrand" runat="server">
-              <asp:ListItem> Adidas</asp:ListItem>
-              <asp:ListItem> Puma</asp:ListItem>
-              <asp:ListItem> Nike</asp:ListItem>
+              <asp:ListItem Value="1">Puma</asp:ListItem>
+              <asp:ListItem Value="2">Adidas</asp:ListItem>
+              <asp:ListItem Value="3">Identity</asp:ListItem>
+                <asp:ListItem Value="4">Nike</asp:ListItem>
+                <asp:ListItem Value="5">Guess</asp:ListItem>
+                <asp:ListItem Value="6">Levis</asp:ListItem>
             </asp:RadioButtonList>
                       <hr class="my-4"/>
             <h4 class="card-title" style="color:black">Gender</h4>
             <asp:RadioButtonList ID="radioListGender" runat="server">
-              <asp:ListItem> Male</asp:ListItem>
-              <asp:ListItem> Female</asp:ListItem>       
+              <asp:ListItem>Male</asp:ListItem>
+              <asp:ListItem>Female</asp:ListItem>       
             </asp:RadioButtonList>
                 <hr class="my-4"/>
             <h4 class="card-title" style="color:black">Price</h4>
@@ -57,7 +60,7 @@
              <hr class="my-2"/>
 
                <div style= "margin-top: 55px;"></div>
-              <asp:Button ID="btn_ApplyFilter" runat="server" Text="Apply Filters" class="btn btn-secondary btn-lg" Width="100%" />
+              <asp:Button ID="btn_ApplyFilter" runat="server" Text="Apply Filters" class="btn btn-secondary btn-lg" Width="100%" OnClick="btn_ApplyFilter_Click" />
               <div style= "margin-top: 25px;"></div>
              <asp:Button ID="btn_ClearFilter" runat="server" Text="Clear Filters" class="btn btn-secondary btn-lg" Width="100%" OnClick="btn_ClearFilter_Click" />
              
@@ -80,61 +83,36 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#"><b>Sale</b>
+        <a class="nav-link" href="Home_wf.aspx">Home
           <span class="sr-only">(current)</span>
         </a>
       </li> <%--//--%>
      
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><b>Women</b></a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Caps</a> 
-          <a class="dropdown-item" href="#">Pants</a>
-          <a class="dropdown-item" href="#">Shoes</a>  
-          <a class="dropdown-item" href="#">T-Shirts</a>       
-        </div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">T-Shirt</a>
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><b>Men</b></a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Caps</a> 
-          <a class="dropdown-item" href="#">Pants</a>
-          <a class="dropdown-item" href="#">Shoes</a>  
-          <a class="dropdown-item" href="#">T-Shirts</a>      
-        </div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><b>Accessories</b></a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Bags</a>
-          <a class="dropdown-item" href="#">Gloves</a>
-          <a class="dropdown-item" href="#">Supplements</a>
-          <a class="dropdown-item" href="#">Waterbottles</a>
-        </div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><b>Equipment</b></a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Boxing</a>
-          <a class="dropdown-item" href="#">Cricket</a>
-          <a class="dropdown-item" href="#">Gymming</a>
-          <a class="dropdown-item" href="#">Soccer</a>       
-        </div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="shoes_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Shoes</a>
       </li>
 
-       <i style= "padding-left: 75px;"></i>
+       <i style= "padding-left: 65px;"></i>
       <%--  Login and Cart Buttons--%>
-       <button type="button" class="btn btn-primary btn-lg" >
-         <span class="glyphicon glyphicon-user" style="color:whitesmoke"></span> <b>Login</b>
-       </button>
-         <i style= "padding-left: 30px;"></i>
+   <asp:LinkButton ID="btn_Login" runat="server" Text="Button" class="btn btn-primary btn-lg " PostBackUrl="~/Login_wf.aspx">
+              <span class="glyphicon glyphicon-user" style="color:whitesmoke"></span> Login
+         </asp:LinkButton>
 
-       <button type="button" class="btn btn-primary btn-lg" >
-         <span class="glyphicon glyphicon-shopping-cart" style="color:whitesmoke"></span><b>Cart</b> 
-       </button>
+         <i style= "padding-left: 30px;"></i>
+       <asp:Linkbutton ID="btn_Cart" type="button" runat="server" class="btn btn-primary btn-lg" OnClick="btn_Cart_Click" PostBackUrl="~/cart_wf.aspx" >
+         <span class="glyphicon glyphicon-shopping-cart" style="color:whitesmoke"></span> Cart</asp:Linkbutton>
         <%--  End of Login and Cart Buttons--%>      
     </ul>
    
@@ -149,96 +127,96 @@
      <div class="col-sm-4" > <%--Left Column--%>
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header1" runat="server" Text="Nike Shoes" ></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton1" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" OnClick="Imagebutton1_Click1" /></div>
+        <div > <asp:ImageButton ID="Imagebutton1" runat="server" OnClick="Imagebutton1_Click1" /></div>
         <div > <asp:Label ID="Footer1" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header4" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton4" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton4"  runat="server" OnClick="Imagebutton4_Click"/></div>
         <div > <asp:Label ID="Footer4" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header7" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton7" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton7"  runat="server" OnClick="Imagebutton7_Click"/></div>
         <div > <asp:Label ID="Footer7" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header10" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton10" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton10" runat="server" OnClick="Imagebutton10_Click"/></div>
         <div > <asp:Label ID="Footer10" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header13" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton13" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton13" runat="server" OnClick="Imagebutton13_Click" /></div>
         <div > <asp:Label ID="Footer13" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header16" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton16" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton16" runat="server" OnClick="Imagebutton16_Click"/></div>
         <div > <asp:Label ID="Footer16" runat="server" Text="Nike Shoes"></asp:Label></div>
     </div>
     <div class="col-sm-4"><%-- Center Column--%>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header2" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton2" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton2" runat="server" OnClick="Imagebutton2_Click" /></div>
         <div > <asp:Label ID="Footer2" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header5" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton5" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton5" runat="server" OnClick="Imagebutton5_Click"/></div>
         <div > <asp:Label ID="Footer5" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header8" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton8" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton8"  runat="server" OnClick="Imagebutton8_Click"/></div>
         <div > <asp:Label ID="Footer8" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header11" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton11" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton11" runat="server" OnClick="Imagebutton11_Click" /></div>
         <div > <asp:Label ID="Footer11" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header14" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton14" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton14"  runat="server" OnClick="Imagebutton14_Click" /></div>
         <div > <asp:Label ID="Footer14" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header17" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton17" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton17" runat="server" OnClick="Imagebutton17_Click" /></div>
         <div > <asp:Label ID="Footer17" runat="server" Text="Nike Shoes"></asp:Label></div>
     </div>
     <div class="col-sm-4"> <%--Right Column--%>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header3" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton3" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton3"  runat="server" OnClick="Imagebutton3_Click" /></div>
         <div> <asp:Label ID="Footer3" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header6" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton6" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton6" runat="server" OnClick="Imagebutton6_Click" /></div>
         <div > <asp:Label ID="Footer6" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header9" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton9" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton9" runat="server" OnClick="Imagebutton9_Click" /></div>
         <div > <asp:Label ID="Footer9" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header12" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton12" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton12"  runat="server" OnClick="Imagebutton12_Click" /></div>
         <div > <asp:Label ID="Footer12" runat="server" Text="Nike Shoes"></asp:Label></div>
 
         <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header15" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton15" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton15" runat="server" OnClick="Imagebutton15_Click"/></div>
         <div > <asp:Label ID="Footer15" runat="server" Text="Nike Shoes"></asp:Label></div>
 
          <div style="margin-bottom:40px"></div>
         <div ><asp:Label ID="Header18" runat="server" Text="Nike Shoes"></asp:Label>  </div>
-        <div > <asp:ImageButton ID="Imagebutton18" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" runat="server" /></div>
+        <div > <asp:ImageButton ID="Imagebutton18" runat="server" OnClick="Imagebutton18_Click"/></div>
         <div > <asp:Label ID="Footer18" runat="server" Text="Nike Shoes"></asp:Label></div>
     </div>
       </div>

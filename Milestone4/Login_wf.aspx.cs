@@ -31,9 +31,11 @@ namespace Milestone4
             DataTable table1 = set1.Tables["[M3 - MemberTbl]"];
             foreach (DataRow dr in table1.Rows)
             {
-                if((string)Session["emailID"] == (string)dr["Email"].ToString()   && (string)Session["passwordID"] == (string)dr["MemberID"].ToString())
+                if((string)Session["emailID"] == (string)dr["Email"].ToString()   && (string)Session["passwordID"] == (string)dr["Password"].ToString())
                 {
                     Session["Sucess"] = 1;
+                    Session["MemberID"] = (sqlClass.GetLoginID(TbxInputEmail.Text, TbxInputPassword.Text)).ToString();
+                    Session["Name"] = sqlClass.GetName((string)Session["MemberID"]);
                     Response.Redirect("~/Home_wf.aspx");
                 }
                 
@@ -110,7 +112,12 @@ namespace Milestone4
 
             return accNumber;
         }
-            
+
+        protected void btn_Cart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/cart_wf.aspx");
+        }
+
 
         //Methods
 

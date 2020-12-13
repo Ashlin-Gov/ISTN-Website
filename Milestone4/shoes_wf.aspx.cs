@@ -22,22 +22,23 @@ namespace Milestone4
         int MaxItems;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["FilterBy"] = 0;
             addControlsToArray();
             hideControls();
-            Load_Details();
-            showControls(MaxItems);
-           
-            /// Load_Images();
-
-
-
-
-
 
         }
 
-        
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            if ((int)Session["FilterBy"] == 0)
+            {
+                Load_Details();
+            }
+                   
+            showControls(MaxItems);
+
+        }
+
 
         protected void addControlsToArray()
         {
@@ -153,6 +154,9 @@ namespace Milestone4
             radioListBrand.ClearSelection();
             radioListGender.ClearSelection();
             radioListPrice.ClearSelection();
+            Session["FilterBy"] = 0;
+
+
         }
 
         protected void Imagebutton1_Click1(object sender, ImageClickEventArgs e)
@@ -162,5 +166,228 @@ namespace Milestone4
             Response.Redirect("~/prepurchase_wf.aspx");
             //Response.Write("<script>alert()</script>");
         }
+
+        protected void Imagebutton2_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[1].Text;
+            Session["ImgUrlDisplay"] = arrImage[1].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton3_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[2].Text;
+            Session["ImgUrlDisplay"] = arrImage[2].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton4_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[3].Text;
+            Session["ImgUrlDisplay"] = arrImage[3].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton5_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[4].Text;
+            Session["ImgUrlDisplay"] = arrImage[4].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+
+        protected void Imagebutton6_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[5].Text;
+            Session["ImgUrlDisplay"] = arrImage[5].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton7_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[6].Text;
+            Session["ImgUrlDisplay"] = arrImage[6].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton8_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[7].Text;
+            Session["ImgUrlDisplay"] = arrImage[7].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton9_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[8].Text;
+            Session["ImgUrlDisplay"] = arrImage[8].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton10_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[9].Text;
+            Session["ImgUrlDisplay"] = arrImage[9].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton11_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[10].Text;
+            Session["ImgUrlDisplay"] = arrImage[10].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton12_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[11].Text;
+            Session["ImgUrlDisplay"] = arrImage[11].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton13_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[12].Text;
+            Session["ImgUrlDisplay"] = arrImage[12].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton14_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[13].Text;
+            Session["ImgUrlDisplay"] = arrImage[13].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton15_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[14].Text;
+            Session["ImgUrlDisplay"] = arrImage[14].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton16_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[15].Text;
+            Session["ImgUrlDisplay"] = arrImage[15].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton17_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[16].Text;
+            Session["ImgUrlDisplay"] = arrImage[16].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+
+        protected void Imagebutton18_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["NameDisplay"] = arrLabel[17].Text;
+            Session["ImgUrlDisplay"] = arrImage[17].ImageUrl;
+            Response.Redirect("~/prepurchase_wf.aspx");
+            //Response.Write("<script>alert()</script>");
+        }
+        protected void btn_Cart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_ApplyFilter_Click(object sender, EventArgs e)
+        {
+            string brand = "4" ;
+            string gender="Male";
+            int price = 0;
+            if (radioListBrand.SelectedItem == null)
+            {
+                brand = "";
+            }
+            else
+            {
+                brand = radioListBrand.SelectedItem.Value;
+            }
+
+            if (radioListGender.SelectedItem == null)
+            {
+                gender = "";
+            }
+            else
+            {
+                gender = radioListGender.SelectedItem.Text;
+            }
+            
+                if (radioListPrice.SelectedIndex == 0 || radioListPrice.SelectedIndex == -1)
+                {
+                price = 0;
+                    SqlConnectionClass sqlClass = new SqlConnectionClass();
+                    DataTable table1 = sqlClass.Filter_2("1", brand, gender,price);
+
+                    MaxItems = table1.Rows.Count;
+
+                    int i = 0;
+
+                    foreach (DataRow dr in table1.Rows)
+                    {
+                        //    arrProdID[i]= (int)dr["ProdID"];
+                        arrLabel[i].Text = (string)dr["ProductName"];
+                        arrImage[i].ImageUrl = (string)dr["imgPath"];
+                        arrCostLabel[i].Text = "R" + ((decimal)dr["SellingPrice"]).ToString();
+
+                        i += 1;
+                    }
+                    Session["FilterBy"] = 1;
+                }
+                else if (radioListPrice.SelectedIndex == 1)
+                {
+                price = 1;
+                SqlConnectionClass sqlClass = new SqlConnectionClass();
+                DataTable table1 = sqlClass.Filter_2("1", brand, gender,price);
+
+                MaxItems = table1.Rows.Count;
+
+                int i = 0;
+
+                foreach (DataRow dr in table1.Rows)
+                {
+                    //    arrProdID[i]= (int)dr["ProdID"];
+                    arrLabel[i].Text = (string)dr["ProductName"];
+                    arrImage[i].ImageUrl = (string)dr["imgPath"];
+                    arrCostLabel[i].Text = "R" + ((decimal)dr["SellingPrice"]).ToString();
+
+                    i += 1;
+                }
+                Session["FilterBy"] = 1;
+            }
+            
+
+          
+         
+
+       
+
+
+
+
+
+            
+
+        }
+
+       
     }
 }

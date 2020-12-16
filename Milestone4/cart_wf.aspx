@@ -102,7 +102,7 @@
 
             <div class="row">
             <div class="col-sm-5">
-                <asp:Label ID="prod1" runat="server" Text="Nike Shoes"></asp:Label>
+                <asp:Label ID="prod1" runat="server" Text=""></asp:Label>
                   <div style="margin-bottom:45px"></div>
                 <asp:Label ID="prod2" runat="server" Text=""></asp:Label>
                   <div style="margin-bottom:45px"></div>
@@ -125,7 +125,7 @@
             </div>
 
             <div class="col-sm-2">
-                 <asp:Label ID="qty1" runat="server" Text="1"></asp:Label>
+                 <asp:Label ID="qty1" runat="server" Text=""></asp:Label>
                   <div style="margin-bottom:45px"></div>
                 <asp:Label ID="qty2" runat="server" Text=""></asp:Label>
                   <div style="margin-bottom:45px"></div>
@@ -147,7 +147,7 @@
             </div>
 
             <div class="col-sm-3">
-                <asp:Label ID="price1" runat="server" Text="R1200"></asp:Label>
+                <asp:Label ID="price1" runat="server" Text=""></asp:Label>
                   <div style="margin-bottom:45px"></div>
                 <asp:Label ID="price2" runat="server" Text=""></asp:Label>
                   <div style="margin-bottom:45px"></div>
@@ -220,9 +220,9 @@
   <div class="card-body">
     
       <asp:Label ID="Label1" runat="server" Text="Total : R"></asp:Label>
-      <asp:Label ID="lblTotal" runat="server" Text="1200"></asp:Label>
+      <asp:Label ID="lblTotal" runat="server" Text=""></asp:Label>
          <hr class="my-4"/>
-      <asp:Button ID="btn_Order" runat="server" Text="Place Order" class="btn btn-secondary" Width="100%" />
+      <asp:Button ID="btn_Order" runat="server" Text="Place Order" class="btn btn-secondary" Width="100%" OnClick="btn_Order_Click" />
   </div>
    
   </div>
@@ -236,8 +236,8 @@
   </div>
         <%--End Of center column--%>
       <div class="col-lg-2">
-      
-      
+          <asp:Label ID="test1" runat="server" Text="cart"></asp:Label>
+          <asp:Label ID="test2" runat="server" Text="price"></asp:Label>
 </div>
 
       </div> 

@@ -45,7 +45,7 @@ namespace Milestone4
             {
        
                 arrOrdID[i].Text = ((int)dr["OrderNum"]).ToString();
-                arrDate[i].Text = ((DateTime)dr["DateOrdered"]).ToString();
+                arrDate[i].Text = ((DateTime)dr["DateOrdered"]).ToString("yyyy-MM-dd");
                 arrStatus[i].Text = (string)dr["Status"]; 
 
                 i += 1;

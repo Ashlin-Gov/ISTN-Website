@@ -53,6 +53,54 @@ namespace Milestone4
             connection.Close();
             return dt;
         }
+
+        public DataTable ManagerProd()
+        {
+            connection.Open();
+            sql = "Select ProductName,CostPrice,CurrentStock,Discount,SellingPrice,Gender,Status from [M3 - ProductTable] ORDER BY CurrentStock ASC";
+            sqlCommand = new SqlCommand(sql, connection);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            return dt;
+        }
+
+        public DataTable ManagerStaff()
+        {
+            connection.Open();
+            sql = "Select * FROM [M3 - StaffTbl]";
+            sqlCommand = new SqlCommand(sql, connection);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            return dt;
+        }
+
+        public DataTable ManagerOrder()
+        {
+            connection.Open();
+            sql = "Select * FROM [M3 - OrderTbl]";
+            sqlCommand = new SqlCommand(sql, connection);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            return dt;
+        }
+
+        public DataTable ManagerMem()
+        {
+            connection.Open();
+            sql = "Select MemberID,Firstname,Surname,CellNumber,Address,Email,ID,Status FROM [M3 - MemberTbl]";
+            sqlCommand = new SqlCommand(sql, connection);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            return dt;
+        }
         public DataTable Load_Shoes(string cat)
         {
             connection.Open();
@@ -64,6 +112,41 @@ namespace Milestone4
             dataAdapter.Fill(dt);
             connection.Close();
             return dt;
+        }
+
+        public void placeOrder(string ordTT, string name,string cellNum,string memId)
+        {
+            DateTime date = System.DateTime.Now;
+            connection.Open();
+            sqlCommand = new SqlCommand("PlaceOrder", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@OrderTotal", decimal.Parse(ordTT) );
+            sqlCommand.Parameters.AddWithValue("@OrderType", "Phone Order");
+            sqlCommand.Parameters.AddWithValue("@FullName", name); 
+            sqlCommand.Parameters.AddWithValue("@CellNum", cellNum);  
+            sqlCommand.Parameters.AddWithValue("@StaffID", 0);
+            sqlCommand.Parameters.AddWithValue("@MemID", memId); 
+            sqlCommand.Parameters.AddWithValue("@DateOrdered", date);
+            sqlCommand.Parameters.AddWithValue("@DatePaid", DBNull.Value);
+            sqlCommand.Parameters.AddWithValue("@Status", "Preparing");
+            sqlCommand.ExecuteNonQuery();
+            connection.Close();
+           
+        }
+
+        public void orderLine(string ordTT, string prodID, string qty, decimal unit)
+        {          
+            connection.Open();
+            sqlCommand = new SqlCommand("PlaceOrderLine", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@OrderNum", int.Parse(ordTT));
+            sqlCommand.Parameters.AddWithValue("@ProdID", int.Parse(prodID));
+            sqlCommand.Parameters.AddWithValue("@Qty", qty);
+            sqlCommand.Parameters.AddWithValue("@UnitPrice", unit.ToString());
+            sqlCommand.Parameters.AddWithValue("@Status", DBNull.Value);
+            sqlCommand.ExecuteNonQuery();
+            connection.Close();
+
         }
 
         public DataTable GetOrdStats(string mem)
@@ -85,6 +168,48 @@ namespace Milestone4
             sqlCommand = new SqlCommand("GetOrderTotal", connection);
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.Parameters.AddWithValue("@ordNum", int.Parse(ordNo));
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            string total = dt.Rows[0][0].ToString();
+            return total;
+        }
+
+        public string GetCellPhone(string memID)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("getCellNo", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@memID", memID);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            string cell = dt.Rows[0][0].ToString();
+            return cell;
+        }
+
+        public string getOrdNo()
+        {
+            connection.Open();
+            sql = "SELECT Max(OrderNum) FROM [M3 - OrderTbl]";
+            sqlCommand = new SqlCommand(sql, connection);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            string ordNo = dt.Rows[0][0].ToString();
+            return ordNo;
+        }
+
+        public string GetRank(string user, string pass)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("getRank", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@username", user);
+            sqlCommand.Parameters.AddWithValue("@pass", pass);
             dataAdapter = new SqlDataAdapter(sqlCommand);
             DataTable dt = new DataTable();
             dataAdapter.Fill(dt);
@@ -203,7 +328,7 @@ namespace Milestone4
             DataTable dt = new DataTable();
             dataAdapter.Fill(dt);
             connection.Close();
-            string id = dt.Rows[0]["ProdID"].ToString();
+            string id = dt.Rows[0][0].ToString();
             return id;
         }
 

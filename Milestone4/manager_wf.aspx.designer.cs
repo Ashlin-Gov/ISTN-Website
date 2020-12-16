@@ -11,7 +11,7 @@ namespace Milestone4
 {
 
 
-    public partial class Home_wf
+    public partial class manager_wf
     {
 
         /// <summary>
@@ -33,103 +33,112 @@ namespace Milestone4
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// lblName control.
+        /// linkProd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
+        protected global::System.Web.UI.WebControls.LinkButton linkProd;
 
         /// <summary>
-        /// btn_Login control.
+        /// linkMem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btn_Login;
+        protected global::System.Web.UI.WebControls.LinkButton linkMem;
 
         /// <summary>
-        /// btn_Cart control.
+        /// linkStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btn_Cart;
+        protected global::System.Web.UI.WebControls.LinkButton linkStaff;
 
         /// <summary>
-        /// Image5 control.
+        /// linkOrd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image5;
+        protected global::System.Web.UI.WebControls.LinkButton linkOrd;
 
         /// <summary>
-        /// Image8 control.
+        /// pnlProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image8;
+        protected global::System.Web.UI.WebControls.Panel pnlProducts;
 
         /// <summary>
-        /// Image3 control.
+        /// gvProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image3;
+        protected global::System.Web.UI.WebControls.GridView gvProducts;
 
         /// <summary>
-        /// btnCheck control.
+        /// pnlMember control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCheck;
+        protected global::System.Web.UI.WebControls.Panel pnlMember;
 
         /// <summary>
-        /// Image4 control.
+        /// gvMembers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image4;
+        protected global::System.Web.UI.WebControls.GridView gvMembers;
 
         /// <summary>
-        /// Image6 control.
+        /// pnlStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image6;
+        protected global::System.Web.UI.WebControls.Panel pnlStaff;
 
         /// <summary>
-        /// Image7 control.
+        /// gvStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image7;
+        protected global::System.Web.UI.WebControls.GridView gvStaff;
 
         /// <summary>
-        /// btn_Status control.
+        /// pnlOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Status;
+        protected global::System.Web.UI.WebControls.Panel pnlOrders;
+
+        /// <summary>
+        /// gvOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvOrder;
 
         /// <summary>
         /// btn_LogOut control.

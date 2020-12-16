@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Data.Common;
 using System.Data;
 using System.CodeDom;
-
+using System.Drawing;
 
 namespace Milestone4
 {
@@ -23,7 +23,7 @@ namespace Milestone4
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["FilterBy"] = 0;
-            lblName.Text =" Hi There!," + Session["Name"].ToString();
+            
 
 
             if ((int)Session["Sucess"] == 1)
@@ -31,6 +31,29 @@ namespace Milestone4
                 Response.Write("<script>alert('Login Successful')</script>");
                 Session["Sucess"] = 0;
             }
+          
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            
+           
+                if ((string)Session["Name"].ToString() == "")
+                {
+                    lblName.ForeColor = Color.Transparent;
+                }
+                else
+                {
+                if ((int)Session["Session"] == 2)
+                {
+                    lblName.ForeColor = Color.White;
+                    lblName.Text = " Hi There! , " + Session["Name"].ToString();
+                }
+                 
+                }
+            
+          
+           
         }
 
         protected void btn_Cart_Click(object sender, EventArgs e)
@@ -48,6 +71,26 @@ namespace Milestone4
         protected void btn_Login_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Login_wf.aspx");
+        }
+
+        protected void btn_LogOut_Click(object sender, EventArgs e)
+        {
+           
+            Session.Abandon();
+            Response.Redirect("~/Login_wf.aspx");
+
+        }
+
+        protected void btn_Status_Click(object sender, EventArgs e)
+        {
+            if ((int)Session["Session"] != 2)
+            {
+                Response.Redirect("~/Login_wf.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/orderStatus_wf.aspx");
+            }
         }
     }
 }

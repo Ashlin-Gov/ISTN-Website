@@ -23,23 +23,37 @@ namespace Milestone4
 
         protected void btn_Login_Click(object sender, EventArgs e)
         {
+            SqlConnectionClass sqlClass = new SqlConnectionClass();
             Session["emailID"] = TbxInputEmail.Text;
             Session["passwordID"] = TbxInputPassword.Text;
 
-            SqlConnectionClass sqlClass = new SqlConnectionClass();
             DataSet set1 = sqlClass.GetDataSet();
             DataTable table1 = set1.Tables["[M3 - MemberTbl]"];
             foreach (DataRow dr in table1.Rows)
             {
-                if((string)Session["emailID"] == (string)dr["Email"].ToString()   && (string)Session["passwordID"] == (string)dr["Password"].ToString())
+                if ((string)Session["emailID"] == (string)dr["Email"].ToString() && (string)Session["passwordID"] == (string)dr["Password"].ToString())
                 {
                     Session["Sucess"] = 1;
                     Session["MemberID"] = (sqlClass.GetLoginID(TbxInputEmail.Text, TbxInputPassword.Text)).ToString();
                     Session["Name"] = sqlClass.GetName((string)Session["MemberID"]);
+                    Session["Session"] = 2;
                     Response.Redirect("~/Home_wf.aspx");
+                }
+
+            }
+
+            if ((int)Session["Sucess"] == 0)
+            {
+                string ceo = sqlClass.GetRank((string)Session["emailID"], (string)Session["passwordID"]);
+                if (ceo == "CEO")
+                {
+                    Session["Sucess"] = 1;
+                    Session["Session"] = 1;
+                    Response.Redirect("~/manager_wf.aspx");
                 }
                 
             }
+           
             if ((int)Session["Sucess"] == 0)
             {
                 Response.Write("<script>alert('Incorrect Details')</script>");

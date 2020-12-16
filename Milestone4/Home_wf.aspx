@@ -46,15 +46,15 @@
      <%--//--%>
       <div style= "padding-left: 50px;"></div>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">T-Shirt</a>   
+        <a class="nav-link dropdown-toggle"  href="tshirts_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">T-Shirts</a>   
       </li>
        <div style= "padding-left: 50px;"></div>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>      
+        <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>      
       </li>
          <div style= "padding-left: 50px;"></div>
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>    
+        <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>    
       </li>
         <div style= "padding-left: 50px;"></div>
         <li class="nav-item dropdown">
@@ -134,20 +134,18 @@
 
 
     <div class="jumbotron" style="background-color:  #2fa4e7 ">
-            <fieldset>
-                <legend style= "padding-left: 870px">Order Status</legend>
-              <%--  Email and Password--%>
-                  <div class="form-group">                 
-                   <div  style= "padding-left: 805px">  <input type="email" class="form-control-nm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" /> </div>  
+         <hr class="my-4"/>
+        <div style="padding-left:42%">
+           <h1 class="display-3" style="color:white">Totalsports</h1>       
+                  <div style="margin-top:10px;padding-left:8.2%" >
+                      <asp:Button ID="btn_Status" runat="server" class="btn btn-primary" Text="Order Status"  Font-Size="Larger" OnClick="btn_Status_Click" />
                   </div>
-                  <div class="form-group">
-                 
-                    <div  style= "padding-left: 805px">   <input type="password" class="form-control-nm" id="exampleInputPassword1" placeholder="Password"/></div>  
-                  </div>
-              <%-- End of Email and Password--%>
-            </fieldset>
-            
-            <div  style= "padding-left: 880px"> <a class="btn btn-primary btn-lg" href="#" role="button"  >Submit</a></div>          
+                  <div style="margin-top:10px;padding-left:10.3%">  <asp:Button ID="btn_LogOut" runat="server" class="btn btn-primary" Text="Log Out" Font-Size="Larger" OnClick="btn_LogOut_Click" /></div>
+                
+           
+        
+        </div>      
+         
 <%--Company About and contact--%>
    <hr class="my-4"/>
 </div>

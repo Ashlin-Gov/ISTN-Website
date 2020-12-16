@@ -96,10 +96,12 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\npm.js" />
     <Content Include="Login_wf.aspx" />
+    <Content Include="manager_wf.aspx" />
     <Content Include="orderStatus_wf.aspx" />
     <Content Include="orderView_wf.aspx" />
     <Content Include="prepurchase_wf.aspx" />
     <Content Include="shoes_wf.aspx" />
+    <Content Include="tshirts_wf.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +128,13 @@
     </Compile>
     <Compile Include="Login_wf.aspx.designer.cs">
       <DependentUpon>Login_wf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager_wf.aspx.cs">
+      <DependentUpon>manager_wf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager_wf.aspx.designer.cs">
+      <DependentUpon>manager_wf.aspx</DependentUpon>
     </Compile>
     <Compile Include="orderStatus_wf.aspx.cs">
       <DependentUpon>orderStatus_wf.aspx</DependentUpon>
@@ -157,6 +166,13 @@
       <DependentUpon>shoes_wf.aspx</DependentUpon>
     </Compile>
     <Compile Include="SqlConnectionClass.cs" />
+    <Compile Include="tshirts_wf.aspx.cs">
+      <DependentUpon>tshirts_wf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tshirts_wf.aspx.designer.cs">
+      <DependentUpon>tshirts_wf.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\bootstrap-theme.css.map" />

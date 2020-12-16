@@ -27,17 +27,15 @@ namespace Milestone4
           
             cart = (List<string>)Session["Cart"];
             cartQTY = (List<string>)Session["CartQTY"];
-    
-           
-         
+            LoadControls();
+            Load_Details();
+
         }
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
-
-            LoadControls();
-            hideControls();
-            Load_Details();
+           
+            hideControls();           
             showControls();
             lblTotal.Text = total().ToString();
         }
@@ -167,6 +165,35 @@ namespace Milestone4
         {
             cart.RemoveAt(1);
             cartQTY.RemoveAt(1);
+        }
+
+        protected void btn_Order_Click(object sender, EventArgs e)
+        {
+            SqlConnectionClass sqlClass = new SqlConnectionClass();
+       
+            if ( (cart.Count > 0) && ((string)Session["MemberID"].ToString()).Length>10)
+            {
+                string cellPhone = sqlClass.GetCellPhone((string)Session["MemberID"].ToString());
+                sqlClass.placeOrder(lblTotal.Text.ToString(), (string)Session["Name"].ToString(), cellPhone, (string)Session["MemberID"].ToString());
+
+                string ordNo = sqlClass.getOrdNo();
+
+                for (int i = 0; i < cart.Count; i++)
+                {
+
+                    string prodID = cart[i];
+                    string qty = cartQTY[i];
+                    decimal price = decimal.Parse(arrPrice[i].Text.ToString());
+                    int qtyprice = int.Parse(cartQTY[i].ToString());
+                    decimal uprice = price * qtyprice;
+                    sqlClass.orderLine(ordNo, prodID, qty, uprice);
+                }
+                Response.Write("Added");
+            }
+
+
+          
+
         }
     }
 }

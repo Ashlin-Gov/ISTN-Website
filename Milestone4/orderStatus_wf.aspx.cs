@@ -121,5 +121,53 @@ namespace Milestone4
             Session["OrdID"] = arrOrdID[1].Text;
             Response.Redirect("~/orderView_wf.aspx");
         }
+
+        protected void ord3_Click(object sender, EventArgs e)
+        {
+            Session["OrdID"] = arrOrdID[2].Text;
+            Response.Redirect("~/orderView_wf.aspx");
+        }
+
+        protected void ord4_Click(object sender, EventArgs e)
+        {
+            Session["OrdID"] = arrOrdID[3].Text;
+            Response.Redirect("~/orderView_wf.aspx");
+        }
+
+        protected void ord5_Click(object sender, EventArgs e)
+        {
+            Session["OrdID"] = arrOrdID[4].Text;
+            Response.Redirect("~/orderView_wf.aspx");
+        }
+
+        protected void ord6_Click(object sender, EventArgs e)
+        {
+            Session["OrdID"] = arrOrdID[5].Text;
+            Response.Redirect("~/orderView_wf.aspx");
+        }
+
+        protected void ord7_Click(object sender, EventArgs e)
+        {
+            Session["OrdID"] = arrOrdID[6].Text;
+            Response.Redirect("~/orderView_wf.aspx");
+        }
+
+        protected void ord8_Click(object sender, EventArgs e)
+        {
+            Session["OrdID"] = arrOrdID[7].Text;
+            Response.Redirect("~/orderView_wf.aspx");
+        }
+
+        protected void ord9_Click(object sender, EventArgs e)
+        {
+            Session["OrdID"] = arrOrdID[8].Text;
+            Response.Redirect("~/orderView_wf.aspx");
+        }
+
+        protected void ord10_Click(object sender, EventArgs e)
+        {
+            Session["OrdID"] = arrOrdID[9].Text;
+            Response.Redirect("~/orderView_wf.aspx");
+        }
     }
 }

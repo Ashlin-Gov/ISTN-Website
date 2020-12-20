@@ -17,10 +17,34 @@
 </head>
   
 <body> 
+<%--Functions--%>
+  
+    <script type = "text/javascript">
+        function Confirm() {
+            var confirm_value = document.createElement("INPUT");
+
+            confirm_value.type = "hidden";
+            confirm_value.name = "confirm_value";
+
+            if (confirm("Do You Want To Place An Order?")) {
+                confirm_value.value = "Yes";
+            }
+            else {
+                confirm_value.value = "No";
+            }
+
+            document.forms[0].appendChild(confirm_value);
+        }
+
+        
+    </script>
+  
+    
+<%--End of functions--%>
  
 
      <form id="form1" runat="server" >
- 
+         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
      <asp:Image ID="Image1" runat="server" ImageUrl="~/Assets/TsBar.png" Width="100%" />
 
@@ -51,15 +75,15 @@
       </li> <%--//--%>
      
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">T-Shirt</a>   
+        <a class="nav-link dropdown-toggle"  href="tshirts_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">T-Shirt</a>   
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>      
+        <a class="nav-link dropdown-toggle"  href="pants_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>      
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>
+        <a class="nav-link dropdown-toggle"  href="access_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>
      
       </li>
 
@@ -178,28 +202,28 @@
                           <asp:Button ID="btnI2" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" OnClick="btnI2_Click1" /> 
                     </div>
                      <div>                      
-                          <asp:Button ID="btnI3" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" /> 
+                          <asp:Button ID="btnI3" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" OnClick="btnI3_Click" /> 
                     </div>
                     <div>                      
-                          <asp:Button ID="btnI4" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" /> 
+                          <asp:Button ID="btnI4" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" OnClick="btnI4_Click" /> 
                     </div>
                     <div>                      
-                          <asp:Button ID="btnI5" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" /> 
+                          <asp:Button ID="btnI5" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" OnClick="btnI5_Click" /> 
                     </div>
                     <div>                      
-                          <asp:Button ID="btnI6" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" /> 
+                          <asp:Button ID="btnI6" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" OnClick="btnI6_Click" /> 
                     </div>
                     <div>                      
-                          <asp:Button ID="btnI7" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" /> 
+                          <asp:Button ID="btnI7" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" OnClick="btnI7_Click" /> 
                     </div>
                     <div>                      
-                          <asp:Button ID="btnI8" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" /> 
+                          <asp:Button ID="btnI8" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" OnClick="btnI8_Click" /> 
                     </div>
                     <div>                      
-                          <asp:Button ID="btnI9" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" /> 
+                          <asp:Button ID="btnI9" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" OnClick="btnI9_Click" /> 
                     </div>
                      <div>                      
-                          <asp:Button ID="btnI10" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" /> 
+                          <asp:Button ID="btnI10" runat="server" Text="X" CssClass="btn btn-secondary" style="margin-top:40px" Width="40px" OnClick="btnI10_Click" /> 
                     </div>
                   
           
@@ -222,7 +246,7 @@
       <asp:Label ID="Label1" runat="server" Text="Total : R"></asp:Label>
       <asp:Label ID="lblTotal" runat="server" Text=""></asp:Label>
          <hr class="my-4"/>
-      <asp:Button ID="btn_Order" runat="server" Text="Place Order" class="btn btn-secondary" Width="100%" OnClick="btn_Order_Click" />
+      <asp:Button ID="btn_Order" runat="server" Text="Place Order" class="btn btn-secondary" Width="100%" OnClick="btn_Order_Click" OnClientClick="Confirm()" />
   </div>
    
   </div>
@@ -236,8 +260,7 @@
   </div>
         <%--End Of center column--%>
       <div class="col-lg-2">
-          <asp:Label ID="test1" runat="server" Text="cart"></asp:Label>
-          <asp:Label ID="test2" runat="server" Text="price"></asp:Label>
+          
 </div>
 
       </div> 
@@ -247,28 +270,31 @@
 </div>
    
 <%--<%--Footer Of the Page   --%>    
-
-
-    <div class="jumbotron" style="background-color:  #2fa4e7 ">
-            <fieldset>
-                <legend style= "padding-left: 870px">Order Status</legend>
-              <%--  Email and Password--%>
-                  <div class="form-group">                 
-                   <div  style= "padding-left: 805px">  <input type="email" class="form-control-nm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" /> </div>  
-                  </div>
-                  <div class="form-group">
-                 
-                    <div  style= "padding-left: 805px">   <input type="password" class="form-control-nm" id="exampleInputPassword1" placeholder="Password"/></div>  
-                  </div>
-              <%-- End of Email and Password--%>
-            </fieldset>
+<div class="jumbotron" style="background-color:  #2fa4e7 ">
+        <hr class="my-4"/>
+        <div style="padding-left:42%">
+           <h1 class="display-3" style="color:white">Totalsports</h1> 
+            <div style="margin-top:10px;padding-right:2%" >
+           
+             </div>
+             
+                    
+          <div>  
+           
+        
+        </div>       
             
-            <div  style= "padding-left: 880px"> <a class="btn btn-primary btn-lg" href="#" role="button"  >Submit</a></div>          
+               
 <%--Company About and contact--%>
    <hr class="my-4"/>
-</div>
 
+</div>
+        <div style="margin-top:10px;padding-left:20.2%" >
+                <h1 class="display-2" style="color:white">#Your Number 1 Sport's Store</h1> 
+        </div>
+<div style="margin-top:20px">
   <asp:Image ID="Image2" runat="server" ImageUrl="~/Assets/bottombar.png" Width="100%" />
+    </div>
 </div>
 <%--End Of Company About and contact--%>
 <%--End of Footer Of the Page   --%>   

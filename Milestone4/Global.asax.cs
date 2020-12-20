@@ -39,6 +39,7 @@ namespace Milestone4
             Session.Add("Name","");
             //
             Session.Add("Session", 1);
+            Session.Add("cval", "");
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

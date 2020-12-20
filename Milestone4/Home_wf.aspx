@@ -40,7 +40,7 @@
         
            <div style= "padding-left: 150px;"></div>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="Home_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Home</a>   
+        <a class="nav-link dropdown-toggle"  href="Home_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Home</a>   
       </li>
        
      <%--//--%>
@@ -50,11 +50,11 @@
       </li>
        <div style= "padding-left: 50px;"></div>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>      
+        <a class="nav-link dropdown-toggle"  href="pants_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>      
       </li>
          <div style= "padding-left: 50px;"></div>
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>    
+        <a class="nav-link dropdown-toggle"  href="access_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>    
       </li>
         <div style= "padding-left: 50px;"></div>
         <li class="nav-item dropdown">
@@ -136,7 +136,10 @@
     <div class="jumbotron" style="background-color:  #2fa4e7 ">
          <hr class="my-4"/>
         <div style="padding-left:42%">
-           <h1 class="display-3" style="color:white">Totalsports</h1>       
+           <h1 class="display-3" style="color:white">Totalsports</h1> 
+            <div style="margin-top:10px;padding-left:7.2%" >
+                <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Update Details" Font-Size="Larger" OnClick="Button1_Click" />
+                  </div>
                   <div style="margin-top:10px;padding-left:8.2%" >
                       <asp:Button ID="btn_Status" runat="server" class="btn btn-primary" Text="Order Status"  Font-Size="Larger" OnClick="btn_Status_Click" />
                   </div>

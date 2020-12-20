@@ -37,18 +37,18 @@ namespace Milestone4
             DataTable table1 = sqlClass.GetReceipt((string)Session["OrdID"]);
             howManyItems = table1.Rows.Count;
 
-            for (int i = 0; i < howManyItems; i++)
-            {
-           
 
+
+            int i = 0;
                 foreach (DataRow dr in table1.Rows)
                 {
                     arrProd[i].Text = (string)dr["ProductName"];
                     arrPrice[i].Text = "R"+((decimal)dr["SellingPrice"]).ToString();
                     arrQTY[i].Text = ((int)dr["Qty"]).ToString();
+                 i += 1;  
                 }
 
-            }
+            
             ordNo.Text = "Order No #" + Session["OrdID"].ToString();
             ordTotal.Text ="Order Total : R" + sqlClass.GetOrderTotal((string)Session["OrdID"]).ToString();
            

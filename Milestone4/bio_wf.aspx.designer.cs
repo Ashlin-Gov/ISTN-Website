@@ -11,7 +11,7 @@ namespace Milestone4
 {
 
 
-    public partial class Home_wf
+    public partial class bio_wf
     {
 
         /// <summary>
@@ -33,22 +33,13 @@ namespace Milestone4
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// lblName control.
+        /// btn_Login_Refresh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
-
-        /// <summary>
-        /// btn_Login control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btn_Login;
+        protected global::System.Web.UI.WebControls.LinkButton btn_Login_Refresh;
 
         /// <summary>
         /// btn_Cart control.
@@ -60,94 +51,94 @@ namespace Milestone4
         protected global::System.Web.UI.WebControls.LinkButton btn_Cart;
 
         /// <summary>
-        /// Image5 control.
+        /// pnlDets control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image5;
+        protected global::System.Web.UI.WebControls.Panel pnlDets;
 
         /// <summary>
-        /// Image8 control.
+        /// TbxInputName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image8;
+        protected global::System.Web.UI.WebControls.TextBox TbxInputName;
 
         /// <summary>
-        /// Image3 control.
+        /// TbxInputSurname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image3;
+        protected global::System.Web.UI.WebControls.TextBox TbxInputSurname;
 
         /// <summary>
-        /// btnCheck control.
+        /// TbxInputCellNum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCheck;
+        protected global::System.Web.UI.WebControls.TextBox TbxInputCellNum;
 
         /// <summary>
-        /// Image4 control.
+        /// TbxInputAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image4;
+        protected global::System.Web.UI.WebControls.TextBox TbxInputAddress;
 
         /// <summary>
-        /// Image6 control.
+        /// TbxInputRegEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image6;
+        protected global::System.Web.UI.WebControls.TextBox TbxInputRegEmail;
 
         /// <summary>
-        /// Image7 control.
+        /// InputIdNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image7;
+        protected global::System.Web.UI.WebControls.TextBox InputIdNo;
 
         /// <summary>
-        /// Button1 control.
+        /// TbxInputRegPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox TbxInputRegPassword;
 
         /// <summary>
-        /// btn_Status control.
+        /// tbxConfPass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Status;
+        protected global::System.Web.UI.WebControls.TextBox tbxConfPass;
 
         /// <summary>
-        /// btn_LogOut control.
+        /// btn_Register control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_LogOut;
+        protected global::System.Web.UI.WebControls.LinkButton btn_Register;
 
         /// <summary>
         /// Image2 control.

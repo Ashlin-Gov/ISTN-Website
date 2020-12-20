@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="prepurchase_wf.aspx.cs" Inherits="Milestone4.prepurchase_wf" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="recovery_wf.aspx.cs" Inherits="Milestone4.recovery_wf" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <title></title>
@@ -43,8 +44,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
+<div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="Home_wf.aspx">Home
@@ -69,87 +69,49 @@
          <a class="nav-link dropdown-toggle"  href="shoes_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Shoes</a>    
         </li>
 
-
        <i style= "padding-left: 65px;"></i>
       <%--  Login and Cart Buttons--%>
-         <asp:LinkButton ID="btn_Login" runat="server" Text="Button" class="btn btn-primary btn-lg " PostBackUrl="~/Login_wf.aspx">
+        <asp:LinkButton ID="btn_Login_Refresh" runat="server" Text="Button" class="btn btn-primary btn-lg " >
               <span class="glyphicon glyphicon-user" style="color:whitesmoke"></span> Login
          </asp:LinkButton>
       
          <div style= "padding-left: 30px;"></div>
           
-       <asp:Linkbutton ID="btn_Cart" type="button" runat="server" class="btn btn-primary btn-lg" PostBackUrl="~/cart_wf.aspx">
+       <asp:Linkbutton ID="btn_Cart" type="button" runat="server" class="btn btn-primary btn-lg"  >
          <span class="glyphicon glyphicon-shopping-cart" style="color:whitesmoke"></span> Cart</asp:Linkbutton>
         <%--  End of Login and Cart Buttons--%>      
     </ul>
    
   </div>
 </nav>
-
 <%-- nav bar end --%>   
     <div style="margin-bottom:30px"></div>
- <%--Preview Screen Start--%>
-  
-  <%--End OF Preview Screen--%>          
-       
-    <div class="row">
-    <div class="col-sm-6">
-        <div class="card border-secondary mb-3" style="width: 100%;height:30rem">
-       
-           <div class="card-body">             
-             <asp:Image ID="itemImage" runat="server" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg"  Width="80%" style="padding-left:20%"/>
-           </div>
-        </div>
-     
+ <%--Login Container Start--%>
+        <div >
+           <div class="card text-black  mb-3" style="max-width: 80rem; height : 21rem ;  background-color : white">
+  <div class="card-header" style="font-size : 50px ; background-color : white ;color:black"><b>Recover Password</b></div>
+  <div class="card-body">
+    <h4 class="card-title" >Recover Password Using Email Adddress</h4>
+    <%--Email & Password--%>
+       <div class="form-group">
+           <div style="margin-top:10px"><label for="exampleInputEmail1" style="color:black" >Enter Email address</label></div>
+      
+      <asp:TextBox runat="server"  class="form-control" id="TbxInputEmail"  style="width:45% "></asp:TextBox>
+    
     </div>
-    <div class="col-sm-6"> 
-        <div class="card border-secondary mb-3" style="width:100%;height:37rem" >
-              <div class="card-header"><asp:Label ID="Header" runat="server" Text="Women's Renew Run Nike Shoes - R1200"></asp:Label></div>
-                <div class="card-body">
-                 <h4 class="card-title" style="color:black">Product Description</h4>
-                   
-                 <p class="card-text"> <asp:Label ID="lblDesc" runat="server" Text="This is to test exactly how much of text for a product description we are going to have."></asp:Label> </p>
-                             <hr class="my-4"/>
-
-                 <h4 class="card-title" style="color:black">Colour</h4>
-
-                  <div>
-                    <asp:DropDownList ID="colourList" runat="server" class="custom-select">                     
-                        
-                    </asp:DropDownList>
-                  </div>
-                    <hr class="my-4"/>
-                    <h4 class="card-title " style="color:black" >Size</h4>
-                    <asp:DropDownList ID="sizeList" runat="server" class="custom-select">                     
-                      
-                    </asp:DropDownList>
+      <div style ="margin-top:10px"><asp:Linkbutton ID="btn_Login" type="button" runat="server" class="btn btn-primary" style="width:20%" OnClick="btn_Login_Click"  >Recover Password</asp:Linkbutton></div>
+         <hr class="my-4"/>
+       <%--End OF Email & Password--%>
 
 
-                    <hr class="my-4" style="margin-top:40px"/>
-                       <div style="margin-top:40px"></div>
-                   <div>
-                    <asp:DropDownList ID="quantityList" runat="server" class="custom-select" style="Width:120px">
-                        <asp:ListItem Value="1">1</asp:ListItem>
-                      
-                        <asp:ListItem>2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                      
-                    </asp:DropDownList>  
-                    <a style="padding-left:10px"></a>
-
-
-                         <asp:Button ID="btn_AddToCart" runat="server" Text="Add To Cart" class="btn btn-secondary" style="width:120px" OnClick="btn_AddToCart_Click" />
-                    </div>
-
-                </div>
-                             
-
-        </div>
-   
+     
+       <%--End Of Registration--%>
   </div>
-
+</div> 
+  
+        </div>
+  <%--End OF Login Container--%>          
+       
        <div style="margin-bottom:10px"></div>
     
 <%--End Of center column--%>
@@ -161,7 +123,7 @@
       </div> 
 </div>
        
-</div>
+
 </div>
    
 <%--<%--Footer Of the Page   --%>    
@@ -203,4 +165,3 @@
 </body>
 
 </html>
-

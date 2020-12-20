@@ -89,19 +89,19 @@
       </li> <%--//--%>
      
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">T-Shirt</a>
+        <a class="nav-link dropdown-toggle"  href="tshirts_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">T-Shirt</a>
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>
+        <a class="nav-link dropdown-toggle"  href="pants_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Pants</a>
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>
+        <a class="nav-link dropdown-toggle"  href="access_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Accessories</a>
       </li>
 
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="shoes_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Shoes</a>
+        <a class="nav-link dropdown-toggle"  href="shoes_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Shoes</a>
       </li>
 
        <i style= "padding-left: 65px;"></i>
@@ -255,25 +255,30 @@
 
 
     <div class="jumbotron" style="background-color:  #2fa4e7 ">
-            <fieldset>
-                <legend style= "padding-left: 870px">Order Status</legend>
-              <%--  Email and Password--%>
-                  <div class="form-group">                 
-                   <div  style= "padding-left: 805px">  <input type="email" class="form-control-nm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" /> </div>  
-                  </div>
-                  <div class="form-group">
-                 
-                    <div  style= "padding-left: 805px">   <input type="password" class="form-control-nm" id="exampleInputPassword1" placeholder="Password"/></div>  
-                  </div>
-              <%-- End of Email and Password--%>
-            </fieldset>
+        <hr class="my-4"/>
+        <div style="padding-left:42%">
+           <h1 class="display-3" style="color:white">Totalsports</h1> 
+            <div style="margin-top:10px;padding-right:2%" >
+           
+             </div>
+             
+                    
+          <div>  
+           
+        
+        </div>       
             
-            <div  style= "padding-left: 880px"> <a class="btn btn-primary btn-lg" href="#" role="button"  >Submit</a></div>          
+               
 <%--Company About and contact--%>
-   <hr class="my-4">
-</div>
+   <hr class="my-4"/>
 
+</div>
+        <div style="margin-top:10px;padding-left:20.2%" >
+                <h1 class="display-2" style="color:white">#Your Number 1 Sport's Store</h1> 
+        </div>
+<div style="margin-top:20px">
   <asp:Image ID="Image2" runat="server" ImageUrl="~/Assets/bottombar.png" Width="100%" />
+    </div>
 </div>
 <%--End Of Company About and contact--%>
 <%--End of Footer Of the Page   --%>   

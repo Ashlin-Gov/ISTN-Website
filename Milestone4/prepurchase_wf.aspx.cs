@@ -18,7 +18,7 @@ namespace Milestone4
     {
         List<string> cart;
         List<string> cartQTY;
-        string colourID;
+     
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,11 +38,45 @@ namespace Milestone4
             string colour = colourList.SelectedItem.ToString();
             string size =sizeList.SelectedItem.ToString();
             string id = sqlClass.returnID((string)Session["NameDisplay"].ToString(), colour, size);
-            cart = (List<string>)Session["Cart"];
-            cartQTY = (List<string>)Session["CartQTY"];
-            cart.Add(id);
-            cartQTY.Add(quantityList.SelectedItem.ToString());
-            Response.Redirect("~/Home_wf.aspx");
+            if(int.Parse(quantityList.SelectedItem.ToString()) > sqlClass.getQTY(int.Parse(id)))
+            {
+                Response.Write("<script>alert('Quantity Too High')</script>");
+            }
+            else
+            {
+                int qtyChecker = sqlClass.getQTY(int.Parse(id));
+           
+                cart = (List<string>)Session["Cart"];
+                cartQTY = (List<string>)Session["CartQTY"];
+         
+                if (cart.Contains(id))
+                {
+                    int index = cart.IndexOf(id);
+                    int qtyAdded = int.Parse(quantityList.SelectedItem.ToString()) + int.Parse(cartQTY[index]);
+                    int qty = int.Parse(cartQTY[index]);
+                    if (qtyAdded>qtyChecker)
+                    {
+
+                        Response.Write("<script>alert('Quantity Too High ')</script>");
+                    }
+                    else
+                    {
+                        qty = qty + int.Parse(quantityList.SelectedItem.ToString());
+                        cartQTY[index] = qty.ToString();
+                        Response.Redirect("~/Home_wf.aspx");
+                    }
+                
+                }
+                else
+                {
+                    cart.Add(id);
+                    cartQTY.Add(quantityList.SelectedItem.ToString());
+                    Response.Redirect("~/Home_wf.aspx");
+                }
+             
+             
+            }
+         
             //Call procedure to return prodID and then add ID to the cart
             //cart.add(prodID);
 

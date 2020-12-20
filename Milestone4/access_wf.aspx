@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="tshirts_wf.aspx.cs" Inherits="Milestone4.tshirts_wf" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="access_wf.aspx.cs" Inherits="Milestone4.access_wf" %>
+
 
 <!DOCTYPE html>
 
@@ -226,17 +227,7 @@
 
    
 
-  
 
-
-       <%-- <asp:Panel ID="pnlControl" CssClass="" runat="server" Width="100%" BorderStyle="Solid" Height="800px"></asp:Panel>--%>
-     <%--   <a style="padding-left:30px"></a>
-        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg" Width="30%" OnClick="ImageButton1_Click" />
-        <a style="padding-left:30px"></a>
-        <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57491810.jpg" Width="30%"/>
-        <a style="padding-left:30px"></a>
-        <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57449419.jpg" Width="30%"/>--%>
-        
 
     <div style="margin-bottom:10px"></div>
     
@@ -254,7 +245,8 @@
    
 <%--<%--Footer Of the Page   --%>    
 
-<div class="jumbotron" style="background-color:  #2fa4e7 ">
+
+    <div class="jumbotron" style="background-color:  #2fa4e7 ">
         <hr class="my-4"/>
         <div style="padding-left:42%">
            <h1 class="display-3" style="color:white">Totalsports</h1> 
@@ -291,4 +283,3 @@
 </body>
 
 </html>
-

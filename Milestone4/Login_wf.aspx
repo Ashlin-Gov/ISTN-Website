@@ -18,10 +18,29 @@
 </head>
   
 <body> 
- 
+ <%--Functions--%>
+  
+    <script type = "text/javascript">
+        function Confirm() {
+            var confirm_value = document.createElement("INPUT");
+
+            confirm_value.type = "hidden";
+            confirm_value.name = "confirm_value";
+
+            if (confirm("Do You Want To Register?")) {
+                confirm_value.value = "Yes";
+            }
+            else {
+                confirm_value.value = "No";
+            }
+
+            document.forms[0].appendChild(confirm_value);
+        }
+    </script>
+<%--End of functions--%>
 
      <form id="form1" runat="server" >
- 
+         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
      <asp:Image ID="Image1" runat="server" ImageUrl="~/Assets/TsBar.png" Width="100%" />
 
@@ -95,15 +114,15 @@
        <div class="form-group">
       <label for="exampleInputEmail1" style="color:black" >Email address</label>
       <asp:TextBox runat="server"  class="form-control" id="TbxInputEmail"  style="width:45% "></asp:TextBox>
-    
+  
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1" style="color:black">Password</label>
 
       <asp:TextBox runat="server" class="form-control" id="TbxInputPassword"  style="width:45% "></asp:TextBox>
     </div>
-       <a href="#" class="card-link" style="color:#c71c22 ; padding-left:32%">Forgot Password?</a>
-      <div><asp:Linkbutton ID="btn_Login" type="button" runat="server" class="btn btn-primary" style="width:20%" OnClick="btn_Login_Click" >Login</asp:Linkbutton></div>
+      <div style="padding-left:32.5%"><asp:LinkButton ID="btnPassword" runat="server" ForeColor="#C71C22" PostBackUrl="~/recovery_wf.aspx">Forgot Password?</asp:LinkButton></div>      
+      <div style="margin-top:10px"><asp:Linkbutton ID="btn_Login" type="button" runat="server" class="btn btn-primary" style="width:20%" OnClick="btn_Login_Click" >Login</asp:Linkbutton></div>
          <hr class="my-4"/>
        <%--End OF Email & Password--%>
 
@@ -146,7 +165,7 @@
       <asp:TextBox runat="server"  class="form-control" id="TbxInputRegPassword"  style="width:45% "></asp:TextBox>
     </div>
 
-        <div ><asp:Linkbutton ID="btn_Register" type="button" runat="server" class="btn btn-primary" style="width:20% ; margin-top:25px" OnClick="btn_Register_Click" >Register</asp:Linkbutton></div>
+        <div ><asp:Linkbutton ID="btn_Register" type="button" runat="server" class="btn btn-primary" style="width:20% ; margin-top:25px" OnClick="btn_Register_Click" OnClientClick="Confirm()" >Register</asp:Linkbutton></div>
        <%--End Of Registration--%>
   </div>
 </div> 
@@ -169,28 +188,31 @@
 </div>
    
 <%--<%--Footer Of the Page   --%>    
-
-
-    <div class="jumbotron" style="background-color:  #2fa4e7 ">
-            <fieldset>
-                <legend style= "padding-left: 870px">Order Status</legend>
-              <%--  Email and Password--%>
-                  <div class="form-group">                 
-                   <div  style= "padding-left: 805px">  <input type="email" class="form-control-nm" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" /> </div>  
-                  </div>
-                  <div class="form-group">
-                 
-                    <div  style= "padding-left: 805px">   <input type="password" class="form-control-nm" id="exampleInputPassword1" placeholder="Password"/></div>  
-                  </div>
-              <%-- End of Email and Password--%>
-            </fieldset>
+<div class="jumbotron" style="background-color:  #2fa4e7 ">
+        <hr class="my-4"/>
+        <div style="padding-left:42%">
+           <h1 class="display-3" style="color:white">Totalsports</h1> 
+            <div style="margin-top:10px;padding-right:2%" >
+           
+             </div>
+             
+                    
+          <div>  
+           
+        
+        </div>       
             
-            <div  style= "padding-left: 880px"> <a class="btn btn-primary btn-lg" href="#" role="button"  >Submit</a></div>          
+               
 <%--Company About and contact--%>
-   <hr class="my-4">
-</div>
+   <hr class="my-4"/>
 
+</div>
+        <div style="margin-top:10px;padding-left:20.2%" >
+                <h1 class="display-2" style="color:white">#Your Number 1 Sport's Store</h1> 
+        </div>
+<div style="margin-top:20px">
   <asp:Image ID="Image2" runat="server" ImageUrl="~/Assets/bottombar.png" Width="100%" />
+    </div>
 </div>
 <%--End Of Company About and contact--%>
 <%--End of Footer Of the Page   --%>   

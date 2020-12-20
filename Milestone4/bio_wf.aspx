@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="prepurchase_wf.aspx.cs" Inherits="Milestone4.prepurchase_wf" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="bio_wf.aspx.cs" Inherits="Milestone4.bio_wf" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <title></title>
@@ -43,8 +44,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
+<div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="Home_wf.aspx">Home
@@ -69,87 +69,83 @@
          <a class="nav-link dropdown-toggle"  href="shoes_wf.aspx" role="button" aria-haspopup="true" aria-expanded="false">Shoes</a>    
         </li>
 
-
        <i style= "padding-left: 65px;"></i>
       <%--  Login and Cart Buttons--%>
-         <asp:LinkButton ID="btn_Login" runat="server" Text="Button" class="btn btn-primary btn-lg " PostBackUrl="~/Login_wf.aspx">
+        <asp:LinkButton ID="btn_Login_Refresh" runat="server" Text="Button" class="btn btn-primary btn-lg " >
               <span class="glyphicon glyphicon-user" style="color:whitesmoke"></span> Login
          </asp:LinkButton>
       
          <div style= "padding-left: 30px;"></div>
           
-       <asp:Linkbutton ID="btn_Cart" type="button" runat="server" class="btn btn-primary btn-lg" PostBackUrl="~/cart_wf.aspx">
+       <asp:Linkbutton ID="btn_Cart" type="button" runat="server" class="btn btn-primary btn-lg"  >
          <span class="glyphicon glyphicon-shopping-cart" style="color:whitesmoke"></span> Cart</asp:Linkbutton>
         <%--  End of Login and Cart Buttons--%>      
     </ul>
    
   </div>
 </nav>
-
 <%-- nav bar end --%>   
     <div style="margin-bottom:30px"></div>
- <%--Preview Screen Start--%>
-  
-  <%--End OF Preview Screen--%>          
-       
-    <div class="row">
-    <div class="col-sm-6">
-        <div class="card border-secondary mb-3" style="width: 100%;height:30rem">
-       
-           <div class="card-body">             
-             <asp:Image ID="itemImage" runat="server" ImageUrl="https://image.tfgmedia.co.za/image/1/process/259x259?source=http://cdn.tfgmedia.co.za/13/ProductImages/57650245.jpg"  Width="80%" style="padding-left:20%"/>
-           </div>
-        </div>
-     
+ <%--Login Container Start--%>
+        <div >
+           <div class="card text-black  mb-3" style="max-width: 80rem; height : 62rem ;  background-color : white">
+  <div class="card-header" style="font-size : 50px ; background-color : white ;color:black"><b>Profile Editing</b></div>
+  <div class="card-body">
+ 
+      <%--Start Of Registration--%>
+      <asp:Panel ID="pnlDets" runat="server">
+          <h4 class="card-title" >Edit Your Online Profile</h4>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1" style="color:black" >Name</label>
+        <asp:TextBox runat="server"  class="form-control" id="TbxInputName"  style="width:45% "></asp:TextBox>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1" style="color:black" >Surname</label>
+        <asp:TextBox runat="server"  class="form-control" id="TbxInputSurname"  style="width:45% "></asp:TextBox>
+      </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1" style="color:black" >Contact No.</label>
+      <asp:TextBox runat="server"  class="form-control" id="TbxInputCellNum"  style="width:45% "></asp:TextBox>
     </div>
-    <div class="col-sm-6"> 
-        <div class="card border-secondary mb-3" style="width:100%;height:37rem" >
-              <div class="card-header"><asp:Label ID="Header" runat="server" Text="Women's Renew Run Nike Shoes - R1200"></asp:Label></div>
-                <div class="card-body">
-                 <h4 class="card-title" style="color:black">Product Description</h4>
-                   
-                 <p class="card-text"> <asp:Label ID="lblDesc" runat="server" Text="This is to test exactly how much of text for a product description we are going to have."></asp:Label> </p>
-                             <hr class="my-4"/>
 
-                 <h4 class="card-title" style="color:black">Colour</h4>
+     <div class="form-group">
+      <label for="exampleInputEmail1" style="color:black" >Home Address</label>
+        <asp:TextBox runat="server"  class="form-control" id="TbxInputAddress"  style="width:45% "></asp:TextBox>
+    </div>
 
-                  <div>
-                    <asp:DropDownList ID="colourList" runat="server" class="custom-select">                     
-                        
-                    </asp:DropDownList>
-                  </div>
-                    <hr class="my-4"/>
-                    <h4 class="card-title " style="color:black" >Size</h4>
-                    <asp:DropDownList ID="sizeList" runat="server" class="custom-select">                     
-                      
-                    </asp:DropDownList>
+    <div class="form-group">
+      <label for="exampleInputEmail1" style="color:black" >Email address</label>
+        <asp:TextBox runat="server"  class="form-control" id="TbxInputRegEmail"  style="width:45% "></asp:TextBox>
+    </div>
 
+    <div class="form-group">
+      <label for="exampleInputPassword1" style="color:black">Identification Number</label>
+      <asp:TextBox runat="server"  class="form-control" id="InputIdNo"  style="width:45% " ReadOnly="True"></asp:TextBox>
+    </div>
 
-                    <hr class="my-4" style="margin-top:40px"/>
-                       <div style="margin-top:40px"></div>
-                   <div>
-                    <asp:DropDownList ID="quantityList" runat="server" class="custom-select" style="Width:120px">
-                        <asp:ListItem Value="1">1</asp:ListItem>
-                      
-                        <asp:ListItem>2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                      
-                    </asp:DropDownList>  
-                    <a style="padding-left:10px"></a>
+    <div class="form-group">
+      <label for="exampleInputPassword1" style="color:black">Password</label>
+      <asp:TextBox runat="server"  class="form-control" id="TbxInputRegPassword"  style="width:45% "></asp:TextBox>
+    </div>
 
+   <div class="form-group">
+      <label for="confirmPass" style="color:black">Confirm Password</label>
+      <asp:TextBox runat="server"  class="form-control" id="tbxConfPass"  style="width:45% "></asp:TextBox>
+    </div>
 
-                         <asp:Button ID="btn_AddToCart" runat="server" Text="Add To Cart" class="btn btn-secondary" style="width:120px" OnClick="btn_AddToCart_Click" />
-                    </div>
-
-                </div>
-                             
-
-        </div>
-   
+        <div ><asp:Linkbutton ID="btn_Register" type="button" runat="server" class="btn btn-primary" style="width:20% ; margin-top:25px" OnClick="btn_Register_Click"  >Update Details</asp:Linkbutton></div>
+      </asp:Panel>
+      
+       <%--End Of Registration--%>
   </div>
-
+</div> 
+  
+        </div>
+  <%--End OF Login Container--%>          
+       
        <div style="margin-bottom:10px"></div>
     
 <%--End Of center column--%>
@@ -161,11 +157,10 @@
       </div> 
 </div>
        
-</div>
+
 </div>
    
 <%--<%--Footer Of the Page   --%>    
-
 <div class="jumbotron" style="background-color:  #2fa4e7 ">
         <hr class="my-4"/>
         <div style="padding-left:42%">

@@ -64,7 +64,7 @@ namespace Milestone4
 
         protected void btnCheck_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/orderStatus_wf.aspx");
+            Response.Redirect("~/shoes_wf.aspx");
 
         }
 
@@ -91,6 +91,19 @@ namespace Milestone4
             {
                 Response.Redirect("~/orderStatus_wf.aspx");
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if ((int)Session["Session"] != 2)
+            {
+                Response.Redirect("~/Login_wf.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/bio_wf.aspx");
+            }
+         
         }
     }
 }

@@ -78,6 +78,19 @@ namespace Milestone4
             return dt;
         }
 
+       // public string recovery(string email)
+       // {
+       //     connection.Open();
+       //     sql = "Select Password FROM [M3 - MemberTbl] WHERE Email=@email ";
+       //     sqlCommand.Parameters.AddWithValue("@email", email);
+       //     sqlCommand = new SqlCommand(sql, connection);
+       //     dataAdapter = new SqlDataAdapter(sqlCommand);
+       //     DataTable dt = new DataTable();
+       //     dataAdapter.Fill(dt);
+       //     connection.Close();
+       ////    return dt;
+       // }
+
         public DataTable ManagerOrder()
         {
             connection.Open();
@@ -149,6 +162,21 @@ namespace Milestone4
 
         }
 
+        public void updateMem(string first, string sur, string email, string pass,string memID)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("UpdateMember", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@First",first);
+            sqlCommand.Parameters.AddWithValue("@Sur", sur);
+            sqlCommand.Parameters.AddWithValue("@Email", email);
+            sqlCommand.Parameters.AddWithValue("@Password", pass);
+            sqlCommand.Parameters.AddWithValue("@MemId", memID);
+            sqlCommand.ExecuteNonQuery();
+            connection.Close();
+
+        }
+
         public DataTable GetOrdStats(string mem)
         {
             connection.Open();
@@ -174,6 +202,68 @@ namespace Milestone4
             connection.Close();
             string total = dt.Rows[0][0].ToString();
             return total;
+        }
+
+        public bool checkEmailDup(string email)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("checkmail", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@email", email);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            if (dt.Rows.Count > 0)
+            {
+                return false;
+            }
+            
+            return  true;
+        }
+
+        public DataTable GetBioDetails(string memID)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("getBioDetails", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@memID", memID);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();      
+            return dt;
+        }
+
+        public int getQTY(int prodID)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("getQ", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@prodID", prodID);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            return int.Parse(dt.Rows[0][0].ToString());
+        }
+
+        public string recover(string email)
+        {
+            connection.Open();
+            sqlCommand = new SqlCommand("recoverPass", connection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.Parameters.AddWithValue("@email", email);
+            dataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            connection.Close();
+            if (dt.Rows.Count > 0)
+            {
+              return dt.Rows[0][0].ToString();
+            }
+           
+            return "";
         }
 
         public string GetCellPhone(string memID)
@@ -214,8 +304,16 @@ namespace Milestone4
             DataTable dt = new DataTable();
             dataAdapter.Fill(dt);
             connection.Close();
-            string total = dt.Rows[0][0].ToString();
-            return total;
+            if (dt.Rows.Count >0)
+            {
+                string total = dt.Rows[0][0].ToString();
+            }
+            else
+            {
+                return "";
+            }
+            return "";
+           
         }
 
         public string GetName(string memID)

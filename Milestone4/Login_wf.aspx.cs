@@ -67,6 +67,7 @@ namespace Milestone4
 
         protected void btn_Register_Click(object sender, EventArgs e)
         {
+            SqlConnectionClass sqlClass = new SqlConnectionClass();
             string name = TbxInputName.Text;
             string surname = TbxInputSurname.Text;
             string address = TbxInputAddress.Text;
@@ -74,38 +75,89 @@ namespace Milestone4
             string email = TbxInputRegEmail.Text;
             string password = TbxInputRegPassword.Text;
             string id = InputIdNo.Text;
-
-            //Validation to be completed
-
-            String memID = "";
-            bool bflag = true;
-
-            SqlConnectionClass sqlClass = new SqlConnectionClass();
-            DataSet set1 = sqlClass.GetDataSet();
-
-        
-            
-            while (bflag)
+            if (sqlClass.checkEmailDup(email))
             {
-                memID = generateAccountNumber();
-                memID = Regex.Replace(memID, @"\s+", "");
-                DataTable dt = sqlClass.checkMemDuplicate(memID);
-                if (dt.Rows.Count==0)
-                {
-                    bflag = false;
-                }
-               
-            }
 
-            sqlClass.InsertNewAccount(memID, name, surname, cellNo, id, address, email, password);
-            Response.Write("<script>alert('You have been successfully registered!')</script>");
-            TbxInputName.Text="";
-            TbxInputSurname.Text = "";
-            TbxInputAddress.Text = "";
-            TbxInputCellNum.Text = "";
-            TbxInputRegEmail.Text = "";
-            TbxInputRegPassword.Text = "";
-            InputIdNo.Text = "";
+
+                //Validation to be completed
+                if (name.Any(char.IsDigit) || surname.Any(char.IsDigit))
+                {
+                    Response.Write("<script>alert('Name/Surname Contains Letters Only')</script>");
+                }
+                else if (name.Length < 3 || surname.Length < 3)
+                {
+                    Response.Write("<script>alert('Name/Surname Too Short')</script>");
+                }
+                else if (cellNo.Length != 10)
+                {
+                    Response.Write("<script>alert('Cellphone Number Incorrect')</script>");
+                }
+                else if (cellNo.Any(char.IsLetter))
+                {
+                    Response.Write("<script>alert('Cellphone Number Contains Digits Only')</script>");
+                }
+                else if (id.Length != 13)
+                {
+                    Response.Write("<script>alert('ID Incorrect')</script>");
+                }
+
+                else if (id.Any(char.IsLetter))
+                {
+                    Response.Write("<script>alert('ID Contains Digits Only')</script>");
+                }
+                else if (password.Length < 3)
+                {
+                    Response.Write("<script>alert('Password Too Short')</script>");
+                }
+                else
+                {
+
+
+                    string confirmValue = Request.Form["confirm_value"];
+
+                    if (confirmValue == "Yes")
+                    {
+                        String memID = "";
+                        bool bflag = true;
+
+                        sqlClass = new SqlConnectionClass();
+                        DataSet set1 = sqlClass.GetDataSet();
+
+
+
+                        while (bflag)
+                        {
+                            memID = generateAccountNumber();
+                            memID = Regex.Replace(memID, @"\s+", "");
+                            DataTable dt = sqlClass.checkMemDuplicate(memID);
+                            if (dt.Rows.Count == 0)
+                            {
+                                bflag = false;
+                            }
+
+                        }
+
+                        sqlClass.InsertNewAccount(memID, name, surname, cellNo, id, address, email, password);
+                        Response.Write("<script>alert('You have been successfully registered!')</script>");
+                        TbxInputName.Text = "";
+                        TbxInputSurname.Text = "";
+                        TbxInputAddress.Text = "";
+                        TbxInputCellNum.Text = "";
+                        TbxInputRegEmail.Text = "";
+                        TbxInputRegPassword.Text = "";
+                        InputIdNo.Text = "";
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Registration Cancelled')</script>");
+                    }
+                }
+
+            }
+            else
+            {
+                Response.Write("<script>alert('Account Already Exists')</script>");
+            }
         }
 
 

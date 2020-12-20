@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using System.Data.Common;
 using System.Data;
 using System.CodeDom;
+using System.Net.Mail;
 
 namespace Milestone4
 {
@@ -23,13 +24,15 @@ namespace Milestone4
         List<Label> arrPrice = new List<Label>();
         List<Label> arrQTY = new List<Label>();
         List<Button> arrButton = new List<Button>();
+
         protected void Page_Load(object sender, EventArgs e){
-          
+
+         
             cart = (List<string>)Session["Cart"];
             cartQTY = (List<string>)Session["CartQTY"];
             LoadControls();
             Load_Details();
-
+           
         }
 
         protected void Page_PreRender(object sender, EventArgs e)
@@ -169,31 +172,172 @@ namespace Milestone4
 
         protected void btn_Order_Click(object sender, EventArgs e)
         {
+
             SqlConnectionClass sqlClass = new SqlConnectionClass();
-       
-            if ( (cart.Count > 0) && ((string)Session["MemberID"].ToString()).Length>10)
+            if (((string)Session["MemberID"].ToString()).Length < 10)
             {
-                string cellPhone = sqlClass.GetCellPhone((string)Session["MemberID"].ToString());
-                sqlClass.placeOrder(lblTotal.Text.ToString(), (string)Session["Name"].ToString(), cellPhone, (string)Session["MemberID"].ToString());
+                Response.Redirect("~/Login_wf.aspx");
+            }else if (cart.Count<1)
+            {
+                Response.Write("<script>alert('Cart Is Empty')</script>");
+            }
+            else 
+            {             
+                string confirmValue = Request.Form["confirm_value"];
 
-                string ordNo = sqlClass.getOrdNo();
+                if (confirmValue == "Yes")
+                {
+                    string cellPhone = sqlClass.GetCellPhone((string)Session["MemberID"].ToString());
+                    sqlClass.placeOrder(lblTotal.Text.ToString(), (string)Session["Name"].ToString(), cellPhone, (string)Session["MemberID"].ToString());
 
-                for (int i = 0; i < cart.Count; i++)
+                    string ordNo = sqlClass.getOrdNo();
+
+                    for (int i = 0; i < cart.Count; i++)
+                    {
+
+                        string prodID = cart[i];
+                        string qty = cartQTY[i];
+                        decimal price = decimal.Parse(arrPrice[i].Text.ToString());
+                        int qtyprice = int.Parse(cartQTY[i].ToString());
+                        decimal uprice = price * qtyprice;
+                        sqlClass.orderLine(ordNo, prodID, qty, uprice);
+                    }
+
+                    string genEmail = GenerateInvoice(ordNo, cellPhone);
+                    bool mail = SendEmail((string)Session["emailID"], (string)Session["Name"], "Order", genEmail);
+
+                    cart.Clear();
+                    cartQTY.Clear();
+                    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Order Placed')", true);
+                    Response.Redirect("~/Home_wf.aspx");
+                }
+                else
                 {
 
-                    string prodID = cart[i];
-                    string qty = cartQTY[i];
-                    decimal price = decimal.Parse(arrPrice[i].Text.ToString());
-                    int qtyprice = int.Parse(cartQTY[i].ToString());
-                    decimal uprice = price * qtyprice;
-                    sqlClass.orderLine(ordNo, prodID, qty, uprice);
+                    this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Order Cancelled')", true);
                 }
-                Response.Write("Added");
-            }
 
+            } 
 
+        }
+
+        public string GenerateInvoice(string ordNo,string cellphone)
+        {
+            
+            StringBuilder invoiceHtml = new StringBuilder();
+            invoiceHtml.Append("<b>INVOICE : ").Append(ordNo).Append("</b><br />");
+            invoiceHtml.Append("<b>DATE : </b>").Append(DateTime.Now.ToShortDateString()).Append("<br />");
+            invoiceHtml.Append("<b>Invoice Amt :</b> R").Append(lblTotal.Text.ToString()).Append("<br />");
+            invoiceHtml.Append("<br /><b>Store CONTACT INFO:</b><br />");
+            invoiceHtml.Append("<b>Store Name : </b>").Append("TotalSports Ballito").Append("<br />");
+            invoiceHtml.Append("<b>Phone : </b>").Append("0825678901").Append("<br />");
+            invoiceHtml.Append("<b>Email : </b>").Append("puzzlersistn@gmail.com").Append("<br />");
+            invoiceHtml.Append("<b>Address : </b><br />").Append("Shop 17 Ballito Lifestyle Centre, Ballito").Append("<br />");
+            invoiceHtml.Append("<b>Customer Name : </b>").Append((string)Session["Name"]).Append("<br />");
+            invoiceHtml.Append("<b>Customer Cell : </b>").Append(cellphone.ToString()).Append("<br />");
           
+           //
+            invoiceHtml.Append("<br /><b>PRODUCTS:</b><br /><table><tr><th>Qty</th><th>Product</th><th>Total</th></tr>");
+           //
+            for (int i = 0; i < cart.Count; i++)
+            {
+                invoiceHtml.Append("<tr> <td>").Append(cartQTY[i].ToString()).Append("</td> <td>").Append(arrProd[i].Text.ToString()).Append("</td> <td>").Append("R" + arrPrice[i].Text.ToString()).Append("</td> </tr>");
+            }
+            invoiceHtml.Append("</table>");
+            invoiceHtml.Append("<br/>");
+            invoiceHtml.Append("<b>Due Vat Incl: </b>").Append(lblTotal.Text.ToString()).Append("<br />");
+            invoiceHtml.Append("<table><tr><th> </th><th>Tax Invoice</th><th> </th></tr>");
+            invoiceHtml.Append("</table>");
+            invoiceHtml.Append("<table><tr><th>Taxable Value</th><th>VAT Value</th></tr>");
+            double VAT = Math.Round(int.Parse(lblTotal.Text.ToString()) * (15.00 / 100.00), 2);
+            invoiceHtml.Append("<tr> <td>").Append("</td>").Append("<td>").Append("R" + VAT).Append("</td> </tr>");
+            invoiceHtml.Append("</table>");
 
+
+            return invoiceHtml.ToString();
+        }
+
+        public static bool SendEmail(string clientEmail, string clientName, string Subject, string Body)
+        {
+            try
+            {
+                MailAddress FromAddr = new MailAddress("puzzlersistn@gmail.com", "TotalSports Balito", System.Text.Encoding.UTF8);
+                MailAddress ToAddr = new MailAddress(clientEmail, clientName, System.Text.Encoding.UTF8);
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 25,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new System.Net.NetworkCredential("puzzlersistn@gmail.com", "[ashnashlerukim]")
+                };
+
+                using (MailMessage message = new MailMessage(FromAddr, ToAddr)
+                {
+                    Subject = Subject,
+                    Body = Body,
+                    IsBodyHtml = true,
+                    BodyEncoding = System.Text.Encoding.UTF8,
+
+                })
+                {
+                    smtp.Send(message);
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        protected void btnI3_Click(object sender, EventArgs e)
+        {
+            cart.RemoveAt(2);
+            cartQTY.RemoveAt(2);
+        }
+
+        protected void btnI4_Click(object sender, EventArgs e)
+        {
+            cart.RemoveAt(3);
+            cartQTY.RemoveAt(3);
+        }
+
+        protected void btnI5_Click(object sender, EventArgs e)
+        {
+            cart.RemoveAt(4);
+            cartQTY.RemoveAt(4);
+        }
+
+        protected void btnI6_Click(object sender, EventArgs e)
+        {
+            cart.RemoveAt(5);
+            cartQTY.RemoveAt(5);
+        }
+
+        protected void btnI7_Click(object sender, EventArgs e)
+        {
+            cart.RemoveAt(6);
+            cartQTY.RemoveAt(6);
+        }
+
+        protected void btnI8_Click(object sender, EventArgs e)
+        {
+            cart.RemoveAt(7);
+            cartQTY.RemoveAt(7);
+        }
+
+        protected void btnI9_Click(object sender, EventArgs e)
+        {
+            cart.RemoveAt(8);
+            cartQTY.RemoveAt(8);
+        }
+
+        protected void btnI10_Click(object sender, EventArgs e)
+        {
+            cart.RemoveAt(9);
+            cartQTY.RemoveAt(9);
         }
     }
 }

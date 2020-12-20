@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="access_wf.aspx" />
     <Content Include="Assets\advBottom.jpg" />
     <Content Include="Assets\mainadv.jpg" />
     <Content Include="Assets\leftsidebar.jpg" />
@@ -83,6 +84,7 @@
     <Content Include="Assets\topBar.png" />
     <Content Include="Assets\totalsports.jpg" />
     <Content Include="Assets\TsBar.png" />
+    <Content Include="bio_wf.aspx" />
     <Content Include="cart_wf.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
@@ -99,12 +101,28 @@
     <Content Include="manager_wf.aspx" />
     <Content Include="orderStatus_wf.aspx" />
     <Content Include="orderView_wf.aspx" />
+    <Content Include="pants_wf.aspx" />
     <Content Include="prepurchase_wf.aspx" />
+    <Content Include="recovery_wf.aspx" />
     <Content Include="shoes_wf.aspx" />
     <Content Include="tshirts_wf.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="access_wf.aspx.cs">
+      <DependentUpon>access_wf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="access_wf.aspx.designer.cs">
+      <DependentUpon>access_wf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bio_wf.aspx.cs">
+      <DependentUpon>bio_wf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bio_wf.aspx.designer.cs">
+      <DependentUpon>bio_wf.aspx</DependentUpon>
+    </Compile>
     <Compile Include="cart_wf.aspx.cs">
       <DependentUpon>cart_wf.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,6 +168,13 @@
     <Compile Include="orderView_wf.aspx.designer.cs">
       <DependentUpon>orderView_wf.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pants_wf.aspx.cs">
+      <DependentUpon>pants_wf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pants_wf.aspx.designer.cs">
+      <DependentUpon>pants_wf.aspx</DependentUpon>
+    </Compile>
     <Compile Include="prepurchase_wf.aspx.cs">
       <DependentUpon>prepurchase_wf.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -158,6 +183,13 @@
       <DependentUpon>prepurchase_wf.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recovery_wf.aspx.cs">
+      <DependentUpon>recovery_wf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recovery_wf.aspx.designer.cs">
+      <DependentUpon>recovery_wf.aspx</DependentUpon>
+    </Compile>
     <Compile Include="shoes_wf.aspx.cs">
       <DependentUpon>shoes_wf.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

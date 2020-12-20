@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="tshirts_wf.aspx.cs" Inherits="Milestone4.tshirts_wf" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pants_wf.aspx.cs" Inherits="Milestone4.pants_wf" %>
 
 <!DOCTYPE html>
 
@@ -254,7 +254,8 @@
    
 <%--<%--Footer Of the Page   --%>    
 
-<div class="jumbotron" style="background-color:  #2fa4e7 ">
+
+    <div class="jumbotron" style="background-color:  #2fa4e7 ">
         <hr class="my-4"/>
         <div style="padding-left:42%">
            <h1 class="display-3" style="color:white">Totalsports</h1> 
